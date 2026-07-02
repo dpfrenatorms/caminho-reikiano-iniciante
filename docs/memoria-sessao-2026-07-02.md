@@ -1,5 +1,7 @@
 # Memória do Projeto — Sessão 02/07/2026
 
+> **ATUALIZAÇÃO (fim da sessão):** F2, F2b e F3 também foram concluídas. Ver seção "Atualização final da sessão" ao fim deste documento.
+
 > Documento de memória persistente do projeto **Caminho do Reikiano Iniciante**. Serve como contexto de retomada para qualquer sessão futura do Claude/Cowork e como fonte para importação no Mem0 (seção "Aprendizados para o Mem0" ao final).
 
 ## Estado do projeto
@@ -58,3 +60,40 @@ Cada linha abaixo é uma memória atômica pronta para `add_memory`:
 4. Git não funciona dentro da pasta montada do Cowork; o versionamento é feito pelo Renato localmente conforme docs/versionamento.md.
 5. O e-book v2 revisado tem 43 páginas, zero vestígios de IA e um novo anexo "Diário do Reikiano"; changelog completo em docs/changelog-ebook.md.
 6. Pendências do projeto: depoimentos de alunos, fotos em alta resolução, política de garantia, ferramenta de avatar de IA e ferramenta de lista de espera.
+
+---
+
+# Atualização final da sessão (02/07/2026)
+
+## Fases concluídas nesta sessão (estado final)
+
+| Fase | Status | Entregáveis |
+|---|---|---|
+| F0 — Setup | ✅ | Estrutura de pastas, guia `docs/versionamento.md`; **push inicial feito pelo Renato** (commit `f578acb` + fix dos fundos) |
+| F1 — Revisão editorial | ✅ | `ebook/manuscrito-v2.md` + docx 43 págs. + `docs/changelog-ebook.md` |
+| F2 — Briefing Canva | ✅ | `design/briefing-diagramacao-canva.md` |
+| F2b — Diagramação no Canva | ✅ | `design/canva-import/ebook-diagramado.html` (65 págs.) + `bg-cover.png`/`bg-opener.png`; **design editável no Canva: "O Caminho do Reikiano Iniciante — E-book Diagramado v2"**, ID `DAHONIm4LZI`, edição: canva.com/d/4sl0pMwvXZfbPww (o design v1 `DAHONMizHxs` pode ser excluído) |
+| F3 — Curso + roteiros | ✅ | `curso/grade-curricular.md` (6 módulos, 20 aulas) + `curso/roteiros/M0.md`–`M5.md` (~7.800 palavras, formato HeyGen com [PAUSA]) |
+| F4 — Landing page | ⏸️ Pausada | **Aguardando Renato separar os depoimentos reais de alunos** |
+| F5 — Verificação | Pendente | Após F4 |
+
+## Decisões novas desta sessão
+
+- **Ferramenta de avatar: HeyGen** (roteiros formatados com marcações [PAUSA] e negrito de ênfase — validar na prévia de voz).
+- Diagramação via Rota A: HTML fiel gerado por código → GitHub raw → `import-design-from-url` do conector Canva. Fundos violeta precisam ser **PNG** (o importador do Canva descarta degradês CSS de fundo).
+- Mem0 conectado e funcionando: 6 memórias do projeto gravadas (user_id `renato`, metadata projeto `caminho-reikiano-iniciante`).
+
+## Aprendizados técnicos novos
+
+1. O importador do Canva converte texto HTML em elementos editáveis com fidelidade, mas **ignora backgrounds CSS (degradês)** — usar `<img>` PNG full-bleed em páginas escuras.
+2. O conector Mem0 carregou no meio da sessão (tools aparecem após conexão, sem precisar de conversa nova — pode demorar alguns minutos).
+3. Push do Renato requer: `git config --global user.email/name` (feito) e execução dentro da pasta do projeto.
+4. Elementos com `position:absolute` no HTML podem ser reposicionados pelo importador do Canva (ex.: linha da marca na capa subiu) — ajustar manualmente no editor.
+
+## Retomada (próxima sessão)
+
+1. Renato entrega os **depoimentos reais** (+ definir garantia: 7 dias CDC ou estendida; + ferramenta de captura da lista de espera).
+2. Executar **F4**: `landing-page/copy.md` + `index.html` (design system) + `questionario-qualificacao.md` (7 perguntas, 3 segmentos).
+3. Executar **F5**: verificação cruzada de coerência (tom, preços vs. memória oficial, claims, links).
+4. Ajustes manuais no Canva pendentes: posição da linha de marca na capa, foto real do autor, excluir design v1.
+5. Commits sugeridos pendentes: `feat(curso): grade curricular + roteiros heygen` e `docs: memoria da sessao atualizada`.
