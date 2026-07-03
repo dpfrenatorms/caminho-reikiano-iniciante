@@ -2,6 +2,13 @@
 
 Recebe o formulário da landing page, segmenta o lead e grava/notifica via Gmail. **Opção B (Gmail-native)** — reutiliza a credencial `Gmail OAuth2 API` já existente na instância; **nenhuma credencial nova**.
 
+> **STATUS: no ar e validado (03/07/2026).**
+> - Workflow id: `etum7cA1SJRHIk7R` · **ativo**
+> - **URL de produção:** `https://reikibrasilia.app.n8n.cloud/webhook/reiki-lista-espera`
+> - Teste end-to-end: `{"ok":true,"segmento":"Terapeuta em Transicao"}` · execução `success` (notificação + boas-vindas enviadas)
+> - Criado/ativado/testado via API pública do n8n (não por import manual).
+> - ⚠️ Pendente: aplicar o ajuste anti-duplicação na triagem (ver abaixo) — a notificação `[LISTA-ESPERA]` cai no inbox que a *Triagem de Leads Gmail* monitora.
+
 ## Fluxo
 
 ```

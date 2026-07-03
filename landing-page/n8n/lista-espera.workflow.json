@@ -28,9 +28,9 @@
     {
       "parameters": {
         "sendTo": "brasiliareiki@gmail.com",
-        "subject": "={{ $json.assuntoNotificacao }}",
+        "subject": "={{ $('Segmentar e Montar E-mails').item.json.assuntoNotificacao }}",
         "emailType": "html",
-        "message": "={{ $json.corpoNotificacao }}",
+        "message": "={{ $('Segmentar e Montar E-mails').item.json.corpoNotificacao }}",
         "options": {}
       },
       "id": "a1b2c3d4-0003-4000-8000-000000000003",
@@ -47,10 +47,10 @@
     },
     {
       "parameters": {
-        "sendTo": "={{ $json.email }}",
+        "sendTo": "={{ $('Segmentar e Montar E-mails').item.json.email }}",
         "subject": "Você está na lista — O Caminho do Reikiano Iniciante 🌸",
         "emailType": "html",
-        "message": "={{ $json.corpoBoasVindas }}",
+        "message": "={{ $('Segmentar e Montar E-mails').item.json.corpoBoasVindas }}",
         "options": {}
       },
       "id": "a1b2c3d4-0004-4000-8000-000000000004",
@@ -68,7 +68,7 @@
     {
       "parameters": {
         "respondWith": "json",
-        "responseBody": "={{ { \"ok\": true, \"segmento\": $json.segmento } }}",
+        "responseBody": "={{ { \"ok\": true, \"segmento\": $('Segmentar e Montar E-mails').item.json.segmento } }}",
         "options": {}
       },
       "id": "a1b2c3d4-0005-4000-8000-000000000005",
