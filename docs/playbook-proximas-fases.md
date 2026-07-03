@@ -82,7 +82,7 @@ Os 3 entregáveis estão na pasta `landing-page/`. Renderização validada em de
 
 ## 5. Gate de deploy da LP (spec §10) — só publicar quando os 5 estiverem OK
 
-1. [ ] Botão de compra com **checkout Eduzz real** R$ 29,90 (sem placeholder) — **pendência do Renato** (trocar `CHECKOUT_URL` no `index.html`)
+1. [x] Botão de compra com **checkout Eduzz real** R$ 29,90 — ✅ **FEITO** (`https://chk.eduzz.com/7WXGD8240A`); LP **no ar** em `reikibrasilia.br.com/ebook`, fluxo testado ponta a ponta (botão → checkout Eduzz)
 2. [x] Primeira dobra vendendo só o e-book — ✅ implementada e validada no HTML (curso só aparece na §11 secundária)
 3. [x] Depoimentos reais inseridos — ✅ os 4 integrados na §6 do `index.html` e da `copy.md`
 4. [x] Webhook testado — no ar e validado; form da LP envia o payload §6

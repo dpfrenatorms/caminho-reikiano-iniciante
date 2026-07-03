@@ -10,7 +10,7 @@
 
 | Peça | Estado |
 |---|---|
-| **Landing page** (`landing-page/index.html`) | 🟢 **APROVADA** — design pronto; imagens no ar (push feito 03/07, raw GitHub 200). Único item de deploy restante: link de checkout Eduzz (§10 do spec) |
+| **Landing page** (`landing-page/index.html`) | 🟢 **NO AR** — `reikibrasilia.br.com/ebook` (subpasta, DirectAdmin), autossuficiente; checkout Eduzz real (`chk.eduzz.com/7WXGD8240A`) ativo e testado ponta a ponta. Gate de deploy §10 fechado. |
 | **Kit Eduzz** (`design/eduzz/*.png`) | 🟢 **APROVADO** — sem pendências de design (PNGs baked, sem 404) |
 
 **Score de acessibilidade (WCAG AA, contraste):** 15/16 pares PASS → **16/16 após o fix do `.wl-note`** (aplicado nesta sessão).

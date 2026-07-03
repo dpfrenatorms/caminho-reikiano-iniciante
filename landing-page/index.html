@@ -586,8 +586,8 @@ footer .fine{font-size:11.5px;color:#8a7fae;line-height:1.7;border-top:1px solid
 (function(){
   "use strict";
 
-  /* ---------- Checkout (placeholder até o link real da Eduzz) ---------- */
-  var CHECKOUT_URL = "COLE_EDUZZ_29_90"; // <-- Renato: cole aqui a URL real do checkout Eduzz (R$ 29,90)
+  /* ---------- Checkout Eduzz (R$ 29,90) ---------- */
+  var CHECKOUT_URL = "https://chk.eduzz.com/7WXGD8240A";
   document.querySelectorAll('[data-checkout]').forEach(function(el){
     el.addEventListener('click', function(e){
       if (CHECKOUT_URL && CHECKOUT_URL !== "COLE_EDUZZ_29_90") {
