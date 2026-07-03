@@ -8,7 +8,7 @@
 |---|---|
 | F0 Setup · F1 E-book v2 · F2 Briefing · F2b Diagramação · F3 Curso+roteiros | ✅ concluídas |
 | **F4 Landing page** | ✅ **build concluído** (`copy.md` + `index.html` + `questionario-qualificacao.md`) — falta só o **gate de deploy** (pendências do Renato: checkout Eduzz + push do commit `a9a1019`) |
-| F5 Verificação de coerência | ⏳ pronta para começar (build da F4 finalizado) |
+| **F5 Verificação de coerência** | ✅ **concluída** — `docs/relatorio-verificacao.md` (veredito: APROVADO; sem bloqueador de conformidade; 2 recomendações opcionais) |
 
 **Spec da F4 (fonte da verdade):** `docs/superpowers/specs/2026-07-03-f4-landing-page-design.md`
 **Plano mestre:** `PLANO-EXECUCAO.md`
@@ -86,7 +86,7 @@ Os 3 entregáveis estão na pasta `landing-page/`. Renderização validada em de
 2. [x] Primeira dobra vendendo só o e-book — ✅ implementada e validada no HTML (curso só aparece na §11 secundária)
 3. [x] Depoimentos reais inseridos — ✅ os 4 integrados na §6 do `index.html` e da `copy.md`
 4. [x] Webhook testado — no ar e validado; form da LP envia o payload §6
-5. [ ] Revisão de conformidade (sem cura/renda, Mikao Usui 1922, disclaimer PNPIC) — na F5 (disclaimer já no rodapé; varredura final pendente)
+5. [x] Revisão de conformidade — ✅ **F5 concluída** (`docs/relatorio-verificacao.md`): sem cura/renda garantida, "milenar" ausente, Mikao Usui 1922 na LP, disclaimer PNPIC no rodapé. 2 recomendações opcionais (R1: acrescentar "1922" no e-book v3; R2: consentimento LGPD dos depoimentos).
 
 ---
 
