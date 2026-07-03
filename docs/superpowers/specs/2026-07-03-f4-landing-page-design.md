@@ -163,7 +163,7 @@ Instância `reikibrasilia.app.n8n.cloud` **ativa**; 7 workflows; credencial **Gm
 
 | Item | Bloqueia | Resolução |
 |---|---|---|
-| `GROQ_API_KEY` (gratuita) | Depoimentos reais (seção 6) | Renato fornece → transcrição Whisper local dos 4 MP4 em `artefatos/videos/` |
+| ~~`GROQ_API_KEY`~~ ✅ | Depoimentos reais (seção 6) | **Feito** — 4 vídeos transcritos via Groq Whisper; fonte + pull-quotes em `landing-page/depoimentos-transcricoes.md`. Falta só integrar na copy/HTML |
 | **Push do commit `a9a1019`** (v3, local-only; `origin` está em `a6885a5`) | Backgrounds da LP e mockup (raw 404) + import Canva | Push para `origin/main` (confirmar com Renato) |
 | Importar o workflow `Reiki — Lista de Espera Reikiano` no n8n | URL de produção do webhook | Claude gera o JSON import-ready; Renato importa, cria label `Lista de Espera`, ativa e envia a URL |
 | Ajuste do filtro da triagem (`-label:lista-espera`) | Evitar reprocessamento dos leads | 1 linha no gmailTrigger de `xZNYB74zf4WlVRt1` |
