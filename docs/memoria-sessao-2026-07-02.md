@@ -97,3 +97,36 @@ Cada linha abaixo é uma memória atômica pronta para `add_memory`:
 3. Executar **F5**: verificação cruzada de coerência (tom, preços vs. memória oficial, claims, links).
 4. Ajustes manuais no Canva pendentes: posição da linha de marca na capa, foto real do autor, excluir design v1.
 5. Commits sugeridos pendentes: `feat(curso): grade curricular + roteiros heygen` e `docs: memoria da sessao atualizada`.
+
+---
+
+# Compactação da sessão (03/07/2026) — estado exato para retomada
+
+## O que aconteceu depois da última atualização
+
+1. **v3 do e-book (mesclagem com template):** Renato redescobriu um template antigo no Canva ("ebook_template_50_paginas.pdf", ID `DAG0Yhe5VEk`) com capa fotográfica (mulher em luz violeta) e pediu mesclagem. Feito: foto e logo extraídos do PDF exportado; design system mesclado = capa/aberturas fotográficas + League Spartan + roxo `#6A10AD` com marcador ■ + ciano `#3FD8E8` de acento + estrutura do miolo v2. Gerado `design/canva-import/ebook-diagramado-v3.html` (65 págs.) + `bg-cover-v3.png`, `bg-opener-v3.png`.
+2. **Artefatos oficiais recebidos** em `artefatos/`: 4 fotos profissionais do Renato (Ensaio-393/403/411/421), foto de turma (FOTO 14) e logo oficial 1080px. Integrados na v3: `foto-autor-circulo.png` (boas-vindas, do Ensaio-403), `foto-autor-sobre.jpg` (sobre o autor, do Ensaio-421), logo oficial substituiu o extraído.
+3. **Push feito** (commit `a9a1019`, 16 arquivos). ⚠️ Na primeira verificação o raw do GitHub retornou **404** — ou o push ainda estava concluindo ou o CDN não tinha propagado. **PENDENTE: re-verificar a URL raw e importar a v3 no Canva** (`import-design-from-url`, nome "…E-book Diagramado v3", tipo a4). Designs v1 (`DAHONMizHxs`) e v2 (`DAHONIm4LZI`) podem ser excluídos após aprovação da v3.
+4. **Depoimentos (para F4):** fonte = @reiki.brasilia.
+   - Rafaela Lehmann (39, servidora pública): texto completo capturado da legenda do reel DOg0rRuEeha — "Me reencontrei comigo mesma… Foi como se uma luz acendesse dentro de mim"; ansiedade→equilíbrio, sono, propósito.
+   - Ana Lúcia Regino (terapeuta): contexto na legenda (Nível I — O Despertar); fala no vídeo.
+   - 4 MP4s locais salvos em `artefatos/videos/`: ana (51s), daiane (151s), lorena (100s), rafaela (92s).
+5. **Ferramenta claude-video (/watch) instalada e validada** (pedido do Renato, repo bradautomates/claude-video): clonada em `/tmp/claude-video` (sandbox, efêmera — re-clonar em sessão nova), shim `~/.local/bin/yt-dlp` → `python3 -m yt_dlp`, `SETUP_COMPLETE=true` em `~/.config/watch/.env`. Download do Instagram bloqueado (exige login — não injetar cookies). Pipeline local funciona: frames do depoimento-ana extraídos em `/tmp/dep-ana/frames`. **Sem transcrição de fala sem chave Whisper.**
+
+## Próximas ações (ordem)
+
+1. Re-verificar raw do GitHub → **importar v3 no Canva** → conferir capa/boas-vindas/sobre o autor por thumbnail → apresentar ao Renato.
+2. **Depoimentos:** conferir frames (dep-ana) por legendas embutidas no vídeo; se não houver, pedir **GROQ_API_KEY** (gratuita) ao Renato e transcrever os 4 vídeos com `watch.py` local; extrair citações e montar bloco de prova social.
+3. **F4 (landing page):** copy + index.html (design system v3!) + questionário de qualificação. Insumos restantes: política de garantia e ferramenta da lista de espera.
+4. F5 verificação final.
+
+## Comandos úteis de retomada
+
+```bash
+# re-instalar claude-video em sessão nova
+cd /tmp && git clone https://github.com/bradautomates/claude-video.git
+mkdir -p ~/.local/bin && printf '#!/bin/bash\nexec python3 -m yt_dlp "$@"\n' > ~/.local/bin/yt-dlp && chmod +x ~/.local/bin/yt-dlp
+pip install yt-dlp --break-system-packages -q
+# transcrever (com GROQ_API_KEY no ambiente)
+python3 /tmp/claude-video/skills/watch/scripts/watch.py "<mp4 em artefatos/videos>" --max-frames 8 --out-dir /tmp/depX
+```
