@@ -125,10 +125,10 @@ Alunos que viveram a iniciação e a jornada do Reiki:
 **Card 1 — Ana Lúcia** (aluna · terapeuta)
 *"Quando comecei a fazer Reiki, ele começou uma transformação na minha vida — de dentro para fora."*
 
-**Card 2 — Daiane Neves** (aluna)
+**Card 2 — Daiane Neves** (aluna · Facilitadora de Autocura)
 *"Nesse dia eu tive um reencontro comigo mesma. Saí de lá outra pessoa — transbordando amor."*
 
-**Card 3 — Lorena** (aluna · mãe)
+**Card 3 — Lorena** (aluna · Mentora de Autoconhecimento)
 *"Depois do Reiki Nível 1 eu tive um novo despertar. Percebi que sou capaz de ser um canal desse amor."*
 
 **Card 4 (âncora) — Rafaela Lehmann** (aluna dos Níveis 1, 2 e 3 · servidora pública)

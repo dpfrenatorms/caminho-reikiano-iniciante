@@ -11,12 +11,12 @@ Transcrições dos 4 vídeos em `artefatos/videos/` via Whisper (Groq `whisper-l
 
 **Pull-quote LP:** *"Quando comecei a fazer Reiki, ele começou uma transformação na minha vida — de dentro para fora."*
 
-## Daiane Neves (aluna)
+## Daiane Neves (aluna · Facilitadora de Autocura)
 **Transcrição:** "[…] nesse dia eu tive um reencontro comigo mesma. […] o corpo estava rejeitando essa transformação e quando eu saí de lá, saiu outra pessoa, transformada, transbordada de amor. […] é ir aberto para a cura, para receber essa transformação que tanto procuramos."
 
 **Pull-quote LP:** *"Nesse dia eu tive um reencontro comigo mesma. Saí de lá outra pessoa — transbordando amor."*
 
-## Lorena (aluna — mãe)
+## Lorena (aluna · Mentora de Autoconhecimento)
 **Transcrição:** "[…] depois que eu vivi o Reiki nível 1, eu posso dizer que eu tive um novo despertar. O despertar para, de fato, conseguir sentir esse amor incondicional. […] Consegui perceber que eu sou realmente capaz de ser um canal desse amor. […] Aguardo ansiosamente o Reiki nível 2."
 
 **Pull-quote LP:** *"Depois do Reiki Nível 1 eu tive um novo despertar. Percebi que sou capaz de ser um canal desse amor."*
