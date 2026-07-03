@@ -94,7 +94,7 @@ Os 3 entregáveis estão na pasta `landing-page/`. Renderização validada em de
 
 - **Criar o produto na Eduzz e devolver o link de checkout** do e-book R$ 29,90.
   **Kit pronto em `design/eduzz/`:** ficha completa do produto + copy (`eduzz-produto.md`) e 5 artefatos (capa, mockup 3D transparente, imagem quadrada 1080, banner social 1200×628, banner de checkout 1200×400 — design v3). Passo a passo na §8 do `eduzz-produto.md`. Ao receber o link, trocar a constante `CHECKOUT_URL` no `landing-page/index.html` (resolve o gate item 1). **PDF de entrega já gerado:** `design/eduzz/O-Caminho-do-Reikiano-Iniciante.pdf` (65 págs, A4). Também corrigido o overlap logo/tagline na capa do `ebook-diagramado-v3.html`.
-- **Push do commit `a9a1019`** (e-book v3 + fotos + vídeos) — está **local**, `origin` está em `a6885a5`. Sem o push: raw do GitHub dá 404 → backgrounds da LP e mockup quebram, e o import da v3 no Canva fica travado. (Verificar `git log origin/main..HEAD`.)
+- ~~**Push do commit `a9a1019`**~~ ✅ **FEITO 03/07/2026** (`git push origin main`, `a6885a5..acbd771`). Raw do GitHub retorna 200 nas 4 imagens → backgrounds/foto/mockup da LP renderizam. Bloqueio de imagens encerrado.
 - **OK para o ajuste anti-duplicação na triagem** (§2).
 - Ferramenta de captura definitiva (hoje: n8n) e política de garantia já definida (7 dias).
 
