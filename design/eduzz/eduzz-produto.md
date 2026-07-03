@@ -111,6 +111,7 @@ O certificado está na gaveta, a energia está em você — mas falta o passo a 
 
 | Arquivo | Dimensão | Onde usar na Eduzz |
 |---|---|---|
+| `O-Caminho-do-Reikiano-Iniciante.pdf` | 65 pág · A4 | **Arquivo de entrega** (o que o cliente baixa) |
 | `capa-ebook.png` | 1240×1754 | **Capa/imagem principal do produto** (cara do e-book) |
 | `produto-quadrado-1080.png` | 1080×1080 | **Thumbnail do produto** + divulgação social (feed) |
 | `mockup-ebook-3d.png` | 1200×1200 (PNG transparente) | Mockup 3D solto — página de vendas, e-mails, LP (substitui o mockup quebrado) |
@@ -126,7 +127,7 @@ O certificado está na gaveta, a energia está em você — mas falta o passo a 
 
 1. **MyEduzz → Produtos → Novo produto → Digital.**
 2. Preencha os **Dados básicos** (seção 1) e faça upload da **capa** (`capa-ebook.png`) e **thumbnail** (`produto-quadrado-1080.png`).
-3. Faça upload do **arquivo do e-book (PDF)** como conteúdo de entrega. *(O PDF final do e-book v3 é gerado a partir de `design/canva-import/ebook-diagramado-v3.html` — exportar/imprimir em PDF.)*
+3. Faça upload do **arquivo do e-book (PDF)** como conteúdo de entrega — **já pronto:** `design/eduzz/O-Caminho-do-Reikiano-Iniciante.pdf` (65 páginas, A4, ~3 MB, gerado do e-book v3 via Chrome headless).
 4. Defina **preço R$ 29,90** e **garantia 7 dias**.
 5. Cole a **Descrição** (seção 3) e configure o **checkout** (seção 4) com o `banner-checkout-1200x400.png`.
 6. (Opcional) personalize o **e-mail de entrega** (seção 5).
