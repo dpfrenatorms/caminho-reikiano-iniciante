@@ -23,7 +23,7 @@ Ansiedades a neutralizar na copy: "cobrar por Reiki é errado?", "preciso de reg
 |---|---|
 | **Design system** | **v3** (roxo `#6A10AD` + ciano `#3FD8E8`, capa fotográfica, League Spartan) — continuidade visual com o e-book v3 |
 | **Garantia** | **7 dias (CDC)** |
-| **Lista de espera** | **Form nativo → webhook n8n** (payload na §6); segmentação calculada no n8n |
+| **Lista de espera** | **Form nativo → webhook n8n** (payload na §6); workflow dedicado **Gmail-native (Opção B)**; segmentação calculada no nó Code |
 | **Depoimentos** | **4 vídeos transcritos** (Ana, Daiane, Lorena, Rafaela) + card texto do reel da Rafaela |
 | **Checkout** | Eduzz (padrão da marca) — botão CTA aponta para link de checkout (placeholder até definição) |
 
@@ -112,7 +112,7 @@ O `<form>` da seção 11 envia `POST` (JSON) para um endpoint n8n. Na LP o `acti
 }
 ```
 
-### Regras de segmentação (aplicar no n8n → campo `segmento`)
+### Regras de segmentação (aplicar no nó Code → campo `segmento`)
 
 | Segmento | Condição (prioridade de cima para baixo) | Trilha |
 |---|---|---|
@@ -120,7 +120,23 @@ O `<form>` da seção 11 envia `POST` (JSON) para um endpoint n8n. Na LP o `acti
 | **Aspirante a Terapeuta** | `q5 ∈ {profissional, viver_de_reiki}` **ou** `q4 ∈ {conseguir_pessoas, medo_cobrar, aspectos_legais}` | curso |
 | **Praticante Pessoal** | demais casos (`q5 ∈ {uso_pessoal, familia_amigos}`) | nutrição |
 
-n8n sugerido: `Webhook (POST)` → `Function` (calcula `segmento`) → `Google Sheets` (append) → `Gmail/e-mail` (boas-vindas por segmento). Workflow existente da marca: `LJbVP9FCw7LWTrm6`.
+### Arquitetura n8n — VERIFICADA (03/07/2026)
+
+Instância `reikibrasilia.app.n8n.cloud` **ativa**; 7 workflows; credencial **Gmail OAuth2 API** já configurada (usada por 5 workflows). **Não há credencial de Google Sheets** → escolhida a **Opção B (Gmail-native)** para zero setup novo.
+
+**Workflow dedicado a criar:** `Reiki — Lista de Espera Reikiano`
+```
+[Webhook POST /reiki-lista-espera]
+  → [Code: valida payload + calcula "segmento"]
+  → [Gmail: send → inbox]   assunto "[LISTA-ESPERA] {nome} · {segmento}", corpo estruturado com as 7 respostas
+  → [Gmail: addLabels → "Lista de Espera"]   (reusa credencial Gmail OAuth2 existente)
+  → [Gmail: send → boas-vindas ao lead por segmento]  (opcional)
+  → [Respond to Webhook: 200 {ok:true, segmento}]
+```
+
+**Integração com a triagem existente:** o workflow `Reiki — Triagem de Leads Gmail` (`xZNYB74zf4WlVRt1`) processa todo e-mail não lido e rascunha respostas via Claude. Para **não** reprocessar os leads da lista de espera (já qualificados), ajustar o filtro do gmailTrigger da triagem para incluir `-label:lista-espera`. O label `Lista de Espera` é criado/selecionado ao importar o workflow novo.
+
+**Não reutilizar** o webhook `instagram-dm-ai` (`LJbVP9FCw7LWTrm6`) — workflow dedicado mantém a automação de DM isolada.
 
 ### Validação client-side (na LP)
 - `nome`, `email`, `whatsapp` obrigatórios; `email` com validação de formato; WhatsApp aceita máscara.
@@ -145,8 +161,11 @@ n8n sugerido: `Webhook (POST)` → `Function` (calcula `segmento`) → `Google S
 |---|---|---|
 | `GROQ_API_KEY` (gratuita) | Depoimentos reais (seção 6) | Renato fornece → transcrição Whisper local dos 4 MP4 em `artefatos/videos/` |
 | **Push do commit `a9a1019`** (v3, local-only; `origin` está em `a6885a5`) | Backgrounds da LP e mockup (raw 404) + import Canva | Push para `origin/main` (confirmar com Renato) |
-| URL do webhook n8n de produção | Deploy da lista de espera | Placeholder na LP; Renato cola no deploy |
+| Importar o workflow `Reiki — Lista de Espera Reikiano` no n8n | URL de produção do webhook | Claude gera o JSON import-ready; Renato importa, cria label `Lista de Espera`, ativa e envia a URL |
+| Ajuste do filtro da triagem (`-label:lista-espera`) | Evitar reprocessamento dos leads | 1 linha no gmailTrigger de `xZNYB74zf4WlVRt1` |
 | Link de checkout Eduzz + preço final | CTA da oferta | Placeholder; confirmar no deploy |
+
+**n8n verificado (03/07/2026):** instância ativa, API key funcional, credencial Gmail OAuth2 disponível → e-mail e armazenamento resolvidos sem setup novo (Opção B).
 
 ---
 

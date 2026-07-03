@@ -1,0 +1,96 @@
+{
+  "name": "Reiki — Lista de Espera Reikiano",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "reiki-lista-espera",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "a1b2c3d4-0001-4000-8000-000000000001",
+      "name": "Webhook Lista de Espera",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [0, 0],
+      "webhookId": "a1b2c3d4-0001-4000-8000-0000000000w1"
+    },
+    {
+      "parameters": {
+        "jsCode": "const item = $input.first().json;\nconst b = item.body || item;\nconst c = b.contato || {};\nconst q = b.questionario || {};\n\nif (!c.nome || !c.email) {\n  throw new Error('Campos obrigatorios ausentes: nome e email');\n}\n\n// Segmentacao (regras do spec F4 §6, prioridade top-down)\nlet segmento = 'Praticante Pessoal';\nif (q.q6_ja_atendeu === 'sim_pago' || q.q5_objetivo === 'viver_de_reiki') {\n  segmento = 'Terapeuta em Transicao';\n} else if (\n  ['profissional', 'viver_de_reiki'].includes(q.q5_objetivo) ||\n  ['conseguir_pessoas', 'medo_cobrar', 'aspectos_legais'].includes(q.q4_maior_dificuldade)\n) {\n  segmento = 'Aspirante a Terapeuta';\n}\n\nconst rotulos = {\n  q1_momento_reiki: 'Momento no Reiki',\n  q2_tempo_iniciacao: 'Tempo de iniciacao',\n  q3_frequencia: 'Frequencia de pratica',\n  q4_maior_dificuldade: 'Maior dificuldade',\n  q5_objetivo: 'Objetivo principal',\n  q6_ja_atendeu: 'Ja atendeu',\n  q7_investimento: 'Investiria'\n};\nconst linhas = Object.keys(rotulos)\n  .map(k => `<li><b>${rotulos[k]}:</b> ${q[k] || '—'}</li>`)\n  .join('');\n\nconst corpoNotificacao =\n  `<h2>Novo lead — Lista de Espera</h2>` +\n  `<p><b>Segmento:</b> ${segmento}</p>` +\n  `<ul><li><b>Nome:</b> ${c.nome}</li>` +\n  `<li><b>E-mail:</b> ${c.email}</li>` +\n  `<li><b>WhatsApp:</b> ${c.whatsapp || '—'}</li></ul>` +\n  `<h3>Questionario</h3><ul>${linhas}</ul>` +\n  `<p style=\"color:#888\">Origem: ${b.origem || 'landing-page'} · ${b.timestamp_cliente || ''}</p>`;\n\nconst primeiroNome = String(c.nome).split(' ')[0];\nconst corpoBoasVindas =\n  `<p>Ola, ${primeiroNome}! 🌸</p>` +\n  `<p>Voce entrou na lista de espera de <b>O Caminho do Reikiano Iniciante</b>. Que alegria ter voce aqui.</p>` +\n  `<p>Em breve envio novidades sobre o programa completo. Enquanto isso, seu e-book ja e o primeiro passo do caminho.</p>` +\n  `<p>Com carinho,<br>Mestre Renato Menezes<br><i>Om Reiki Om</i></p>`;\n\nreturn [{\n  json: {\n    segmento,\n    nome: c.nome,\n    email: c.email,\n    whatsapp: c.whatsapp || '',\n    corpoNotificacao,\n    corpoBoasVindas,\n    assuntoNotificacao: `[LISTA-ESPERA] ${c.nome} · ${segmento}`\n  }\n}];"
+      },
+      "id": "a1b2c3d4-0002-4000-8000-000000000002",
+      "name": "Segmentar e Montar E-mails",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [240, 0]
+    },
+    {
+      "parameters": {
+        "sendTo": "brasiliareiki@gmail.com",
+        "subject": "={{ $json.assuntoNotificacao }}",
+        "emailType": "html",
+        "message": "={{ $json.corpoNotificacao }}",
+        "options": {}
+      },
+      "id": "a1b2c3d4-0003-4000-8000-000000000003",
+      "name": "Notificar Renato (inbox)",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [480, 0],
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "ljxuwvtS9wNx9hDx",
+          "name": "Gmail OAuth2 API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.email }}",
+        "subject": "Você está na lista — O Caminho do Reikiano Iniciante 🌸",
+        "emailType": "html",
+        "message": "={{ $json.corpoBoasVindas }}",
+        "options": {}
+      },
+      "id": "a1b2c3d4-0004-4000-8000-000000000004",
+      "name": "Boas-vindas ao Lead",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [720, 0],
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "ljxuwvtS9wNx9hDx",
+          "name": "Gmail OAuth2 API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { \"ok\": true, \"segmento\": $json.segmento } }}",
+        "options": {}
+      },
+      "id": "a1b2c3d4-0005-4000-8000-000000000005",
+      "name": "Responder 200",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [960, 0]
+    }
+  ],
+  "connections": {
+    "Webhook Lista de Espera": {
+      "main": [[{ "node": "Segmentar e Montar E-mails", "type": "main", "index": 0 }]]
+    },
+    "Segmentar e Montar E-mails": {
+      "main": [[{ "node": "Notificar Renato (inbox)", "type": "main", "index": 0 }]]
+    },
+    "Notificar Renato (inbox)": {
+      "main": [[{ "node": "Boas-vindas ao Lead", "type": "main", "index": 0 }]]
+    },
+    "Boas-vindas ao Lead": {
+      "main": [[{ "node": "Responder 200", "type": "main", "index": 0 }]]
+    }
+  },
+  "settings": { "executionOrder": "v1" }
+}
