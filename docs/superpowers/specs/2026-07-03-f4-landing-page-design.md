@@ -9,7 +9,9 @@
 
 ## 1. Objetivo
 
-Converter o público-alvo do e-book (reikiano recém-iniciado) em **compradores do e-book tripwire** (R$ 29,90–47) e **leads qualificados da lista de espera do curso** (upsell R$ 197–297). A LP é a peça central do Funil 2 da marca.
+**Oferta principal única da LP: o e-book a R$ 29,90** (produto de entrada). A LP existe para **vender o e-book** — nada mais deve competir com essa venda. O curso online (**R$ 197,00**) é upsell **posterior**, capturado como lista de espera **secundária no final da página**, sem disputar atenção com a compra. A LP é a peça de entrada do Funil 2 da marca.
+
+> **Gateway de aprovação (03/07/2026):** aprovada para **implementação**, **não** para deploy público. Liberação de deploy condicionada ao gate da §10.
 
 **Job Statement (JTBD):** *"Quando termino minha iniciação e me sinto inseguro para aplicar Reiki em outras pessoas, quero um caminho passo a passo validado por um mestre experiente, para praticar com confiança e transformar o Reiki em atendimentos reais."*
 
@@ -22,10 +24,12 @@ Ansiedades a neutralizar na copy: "cobrar por Reiki é errado?", "preciso de reg
 | Decisão | Definição |
 |---|---|
 | **Design system** | **v3** (roxo `#6A10AD` + ciano `#3FD8E8`, capa fotográfica, League Spartan) — continuidade visual com o e-book v3 |
+| **Oferta principal** | **E-book — R$ 29,90 fixo** (único produto vendido na LP) |
+| **Upsell** | Curso online **R$ 197,00** — só como **lista de espera secundária no rodapé**, nunca como oferta concorrente |
 | **Garantia** | **7 dias (CDC)** |
-| **Lista de espera** | **Form nativo → webhook n8n** (payload na §6); workflow dedicado **Gmail-native (Opção B)**; segmentação calculada no nó Code |
-| **Depoimentos** | **4 vídeos transcritos** (Ana, Daiane, Lorena, Rafaela) + card texto do reel da Rafaela |
-| **Checkout** | Eduzz (padrão da marca) — botão CTA aponta para link de checkout (placeholder até definição) |
+| **Lista de espera** | **Form nativo → webhook n8n** (payload na §6); workflow dedicado **Gmail-native (Opção B)**; segmentação no nó Code; **secundária, nunca compete com a compra** |
+| **Depoimentos** | **4 vídeos transcritos** (Ana, Daiane, Lorena, Rafaela) + card texto do reel da Rafaela — reais, nunca genéricos |
+| **Checkout** | Eduzz — botão de compra R$ 29,90. **Link real é bloqueador de deploy** (§10); na implementação usa placeholder marcado, texto do botão já mostra R$ 29,90 |
 
 ---
 
@@ -70,17 +74,17 @@ Ansiedades a neutralizar na copy: "cobrar por Reiki é errado?", "preciso de reg
 
 | # | Seção | Conteúdo | Estilo v3 |
 |---|---|---|---|
-| 1 | **Hero** | Eyebrow ("PARA O REIKIANO RECÉM-INICIADO") + headline (job emocional: "Você foi iniciado no Reiki… mas ainda não aplicou em ninguém?") + subhead + mockup e-book v3 + CTA primário | Fundo `--escuro`, eyebrow ciano, título League Spartan ~44px, linha ciano |
+| 1 | **Hero (primeira dobra)** | Deve responder em 1 tela: **para quem** (eyebrow "PARA O REIKIANO RECÉM-INICIADO") · **qual dor** (headline job emocional: "Você foi iniciado no Reiki… mas ainda não aplicou em ninguém?") · **o que recebe** (subhead: o e-book/guia prático) · **quanto custa** (R$ 29,90 visível) · **próximo passo** (CTA "Quero o e-book — R$ 29,90"). Mockup do e-book v3 visível. **CTA visível sem scroll no desktop; CTA rápido no mobile.** | Fundo `--escuro`, eyebrow ciano, título League Spartan ~44px, linha ciano |
 | 2 | **Identificação** | "Você fez sua iniciação e travou?" — 3–4 dores (certificado na gaveta; medo de "não sentirem nada"; não sabe cobrar; sem clientes) | Cards `--lav-bg`, marcador ■ |
 | 3 | **O que você destrava** | 7 capítulos → 7 benefícios concretos | Lista ■ ciano |
 | 4 | **Para quem é / não é** | 2 colunas de qualificação (é: recém-iniciado, travado, quer atender; não é: quem busca atalho mágico) | Contraste roxo/ciano |
 | 5 | **Autoridade** | Mestre Renato — 27 anos · Nível IV · Delegado Federal · Master Coach + foto (Ensaio-403, `foto-autor-circulo.png`) | Faixa `--escuro`, foto circular borda roxa |
 | 6 | **Prova social** | Depoimentos das 4 transcrições + card Rafaela (texto do reel: *"Me reencontrei comigo mesma… Foi como se uma luz acendesse dentro de mim"*) | Citações Playfair itálico, borda ciano |
-| 7 | **Oferta** | Ancoragem (valor do conteúdo vs. R$ 29,90–47) + bônus (Diário do Reikiano) + CTA checkout | Strip ciano, preço `--ciano-2` grande |
+| 7 | **Oferta (e-book R$ 29,90)** | Ancoragem (valor do conteúdo vs. **R$ 29,90**) + bônus (Diário do Reikiano) + **CTA de compra → checkout Eduzz do e-book**. Preço R$ 29,90 em destaque. Provas (autoridade §5 + depoimentos §6) vêm **antes** desta seção. | Strip ciano, preço `--ciano-2` grande |
 | 8 | **Garantia** | Selo "7 dias — garantia incondicional (CDC)" + compra segura Eduzz | Selo, quebra de objeção |
 | 9 | **FAQ** | 6–8 objeções: "não fiz Nível I ainda?", "funciona se fui iniciado por outro mestre?", "é curso ou e-book?", "preciso de registro para cobrar?", "e se eu não sentir a energia?" | Acordeão (`<details>`) |
-| 10 | **CTA final + P.S.** | Reforço da promessa (caminho/método, nunca renda garantida) + assinatura do Mestre | Fundo `--escuro` |
-| 11 | **Lista de espera do curso** | "O programa completo está chegando" + **form nativo** (nome, e-mail, WhatsApp + 7 perguntas) → webhook n8n | Strip destaque; `action` = placeholder do webhook |
+| 10 | **CTA final + P.S.** | Reforço da promessa (caminho/método, **nunca renda garantida**) + **CTA de compra R$ 29,90** + assinatura do Mestre | Fundo `--escuro` |
+| 11 | **Lista de espera do curso (secundária)** | **Só depois** de esgotada a venda do e-book: "O programa completo está chegando" + **form nativo** (nome, e-mail, WhatsApp + 7 perguntas) → webhook n8n. **Não interrompe a venda; não compete com o CTA de compra.** | Strip discreto; `data-webhook` = placeholder |
 | 12 | **Rodapé** | Disclaimer PNPIC + contatos (@reiki.brasilia · WhatsApp (61) 98309-7777 · reikibrasilia.br.com · brasiliareiki@gmail.com) + políticas | Fine print |
 
 ---
@@ -169,11 +173,25 @@ Instância `reikibrasilia.app.n8n.cloud` **ativa**; 7 workflows; credencial **Gm
 
 ---
 
-## 9. Critério de conclusão da F4
+## 9. Critério de conclusão da implementação (build)
 
 - [ ] `copy.md` revisado e aprovado por Renato
-- [ ] `index.html` renderiza corretamente (desktop + mobile), design v3 fiel
-- [ ] Form da lista de espera envia payload conforme §6 (testado contra webhook de teste)
+- [ ] `index.html` renderiza corretamente, design v3 fiel
+- [ ] **Mobile vende bem** (não só responsivo): CTA visível rápido · texto curto por bloco · botões grandes (alvo ≥ 44px) · mockup sem quebrar · form fácil de preencher · página leve (sem libs pesadas, imagens otimizadas)
+- [ ] **Hierarquia de CTA:** todos os CTAs primários levam à **compra do e-book R$ 29,90**; lista de espera é secundária e não compete
+- [ ] Form da lista de espera envia payload conforme §6 (testado contra webhook)
 - [ ] `questionario-qualificacao.md` com 7 perguntas + 3 segmentos + trilhas
-- [ ] Depoimentos reais integrados (pós-transcrição)
+- [ ] Depoimentos reais integrados (pós-transcrição) — nenhum genérico
 - [ ] Handoff para **F5** (verificação de coerência: tom, preços, claims, links, anti-IA)
+
+## 10. Gateway de deploy (bloqueadores — LP não vai ao ar até todos resolvidos)
+
+A LP está **aprovada para implementação, não para deploy público**. Liberar o deploy **somente** quando os 5 itens abaixo estiverem concluídos:
+
+1. [ ] **Botão de compra com checkout Eduzz real** do e-book **R$ 29,90** (zero placeholder em botão de compra)
+2. [ ] **Primeira dobra** ajustada para vender **apenas a oferta inicial** (e-book), curso não aparece como oferta principal
+3. [ ] **Depoimentos reais** (ou provas substitutas éticas) inseridos
+4. [ ] **Webhook/formulário testado** (curl do README → `{"ok":true,...}`) — ou o form removido da versão inicial
+5. [ ] **Revisão final de conformidade:** sem promessa de cura, sem renda garantida, sem claim exagerado; Reiki como prática criada por Mikao Usui em 1922 (nunca "milenar"); disclaimer PNPIC no rodapé
+
+**Nunca publicar enquanto houver:** link de checkout placeholder · webhook placeholder em produção · depoimento ausente/falso · preço indefinido no botão · CTA dividido entre compra e lista de espera · claim exagerado de cura/renda/resultado.
