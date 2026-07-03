@@ -1,0 +1,43 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><style>
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@1,400;1,700&family=Inter:wght@300;400;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1200px;height:628px;overflow:hidden;font-family:'Inter',sans-serif}
+.art{width:1200px;height:628px;position:relative;overflow:hidden;background:#1a1040}
+.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5;z-index:0}
+.ov{position:absolute;inset:0;z-index:1;background:linear-gradient(115deg,rgba(26,16,64,.94) 0%,rgba(26,16,64,.74) 44%,rgba(26,16,64,.6) 100%)}
+.book{position:absolute;left:44px;top:50%;transform:translateY(-50%);height:566px;z-index:3;filter:drop-shadow(0 20px 36px rgba(0,0,0,.45))}
+.txt{position:absolute;left:512px;top:0;bottom:0;width:648px;z-index:5;display:flex;flex-direction:column;justify-content:center}
+.eyebrow{font-family:'League Spartan',sans-serif;font-weight:800;font-size:20px;letter-spacing:.16em;color:#3FD8E8;text-transform:uppercase}
+.line{width:96px;height:3px;background:#3FD8E8;margin:14px 0 18px}
+h1{font-family:'League Spartan',sans-serif;font-weight:900;font-size:46px;line-height:1.05;color:#fff;text-transform:uppercase}
+.pricerow{display:flex;align-items:baseline;gap:16px;margin-top:24px}
+.pricerow .big{font-family:'League Spartan',sans-serif;font-weight:900;font-size:74px;color:#7FE9F4;line-height:.9}
+.pricerow .from{font-size:19px;color:#CDB8F0}
+.pricerow .from s{opacity:.7;display:block}
+.trust{display:flex;gap:26px;margin-top:22px}
+.trust span{font-family:'League Spartan',sans-serif;font-weight:700;font-size:21px;color:#fff}
+.trust b{color:#3FD8E8;margin-right:6px}
+.brand{position:absolute;left:512px;bottom:34px;z-index:5;font-family:'League Spartan',sans-serif;font-weight:700;
+  font-size:20px;color:#CDB8F0;letter-spacing:.06em}
+.brand b{color:#3FD8E8}
+</style></head><body>
+<div class="art">
+  <img class="bg" src="../../canva-import/bg-opener-v3.png" alt="">
+  <div class="ov"></div>
+  <img class="book" src="book-crop.png" alt="">
+  <div class="txt">
+    <div class="eyebrow">Para o reikiano recém-iniciado</div>
+    <div class="line"></div>
+    <h1>Você foi iniciado no Reiki — e agora?</h1>
+    <div class="pricerow">
+      <div class="big">R$ 29,90</div>
+      <div class="from">de <s>R$ 97</s><span>pagamento único</span></div>
+    </div>
+    <div class="trust">
+      <span><b>✓</b>Acesso imediato</span>
+      <span><b>✓</b>Garantia de 7 dias</span>
+    </div>
+  </div>
+  <div class="brand"><b>@reiki.brasilia</b> · reikibrasilia.br.com</div>
+</div>
+</body></html>

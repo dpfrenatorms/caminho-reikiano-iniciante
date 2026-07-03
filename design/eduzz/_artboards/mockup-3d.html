@@ -1,0 +1,29 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1200px;height:1200px;overflow:hidden;background:transparent}
+.stage{width:1200px;height:1200px;display:flex;align-items:center;justify-content:center}
+.book-wrap{position:relative}
+/* sombra no chão */
+.book-wrap::after{content:"";position:absolute;left:50%;bottom:-64px;transform:translateX(-50%);
+  width:600px;height:60px;background:radial-gradient(ellipse at center,rgba(20,8,45,.45),rgba(20,8,45,0) 70%);
+  filter:blur(6px);z-index:0}
+.book{width:640px;height:905px;position:relative;z-index:2;
+  background:url('../capa-ebook.png') center/cover no-repeat;
+  border-radius:3px 7px 7px 3px;
+  transform:perspective(2200px) rotateY(-19deg) rotateX(2deg);
+  transform-origin:center;
+  box-shadow:
+    2px 0 0 #efeaf6, 4px 0 0 #e6ddf2, 7px 0 0 #dccfea, 10px 0 0 #d0c1e2, 13px 0 0 #c6b6da,
+    16px 2px 2px rgba(20,8,45,.35),
+    46px 64px 90px rgba(20,8,45,.55),
+    22px 30px 44px rgba(20,8,45,.35)}
+/* lombada / sombra interna esquerda */
+.book::before{content:"";position:absolute;top:0;left:0;width:15%;height:100%;
+  background:linear-gradient(90deg,rgba(20,8,45,.55),rgba(20,8,45,.12) 55%,rgba(20,8,45,0));
+  border-radius:3px 0 0 3px;z-index:3;pointer-events:none}
+/* brilho / glare diagonal */
+.book::after{content:"";position:absolute;inset:0;border-radius:3px 7px 7px 3px;z-index:4;pointer-events:none;
+  background:linear-gradient(115deg,rgba(255,255,255,.16) 0%,rgba(255,255,255,.03) 22%,rgba(255,255,255,0) 42%)}
+</style></head><body>
+<div class="stage"><div class="book-wrap"><div class="book"></div></div></div>
+</body></html>

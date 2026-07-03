@@ -1,0 +1,50 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><style>
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@1,400;1,700&family=Inter:wght@300;400;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1080px;overflow:hidden;font-family:'Inter',sans-serif}
+.art{width:1080px;height:1080px;position:relative;overflow:hidden;background:#1a1040}
+.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55;z-index:0}
+.ov{position:absolute;inset:0;z-index:1;
+  background:linear-gradient(120deg,rgba(26,16,64,.92) 0%,rgba(26,16,64,.72) 46%,rgba(26,16,64,.55) 100%)}
+.badge{position:absolute;top:44px;left:50px;z-index:6;display:flex;align-items:center;gap:8px;
+  background:rgba(20,8,45,.85);border:2px solid #3FD8E8;border-radius:30px;padding:10px 20px}
+.badge .at{color:#3FD8E8;font-weight:800;font-family:'League Spartan',sans-serif;font-size:22px}
+.badge .h{color:#fff;font-weight:700;font-size:19px;letter-spacing:.02em}
+.book{position:absolute;left:8px;top:50%;transform:translateY(-50%);width:512px;z-index:3;filter:drop-shadow(0 24px 40px rgba(0,0,0,.45))}
+.txt{position:absolute;left:562px;top:0;bottom:0;width:474px;z-index:5;display:flex;flex-direction:column;justify-content:center}
+.eyebrow{font-family:'League Spartan',sans-serif;font-weight:800;font-size:23px;letter-spacing:.18em;color:#3FD8E8;text-transform:uppercase}
+.line{width:104px;height:3px;background:#3FD8E8;margin:18px 0 22px}
+h1{font-family:'League Spartan',sans-serif;font-weight:900;font-size:50px;line-height:1.05;color:#fff;text-transform:uppercase}
+.sub{font-family:'Playfair Display',serif;font-style:italic;font-size:25px;color:#CDB8F0;margin-top:16px;line-height:1.4}
+.price{margin-top:30px}
+.price .from{font-size:20px;color:#CDB8F0}
+.price .from s{opacity:.7}
+.price .big{font-family:'League Spartan',sans-serif;font-weight:900;font-size:96px;color:#7FE9F4;line-height:.95}
+.price .mode{font-size:19px;color:#F1EAFE;letter-spacing:.03em;margin-top:6px}
+.pill{display:inline-flex;align-items:center;gap:9px;margin-top:28px;align-self:flex-start;
+  background:rgba(58,20,95,.85);border:2px solid #3FD8E8;border-radius:40px;padding:12px 24px;
+  font-family:'League Spartan',sans-serif;font-weight:800;font-size:22px;color:#fff;letter-spacing:.02em}
+.pill b{color:#3FD8E8}
+.author{margin-top:30px;font-size:19px;color:#EDE6FA;font-weight:600}
+.author b{color:#fff;font-family:'League Spartan',sans-serif;letter-spacing:.04em}
+</style></head><body>
+<div class="art">
+  <img class="bg" src="../../canva-import/bg-opener-v3.png" alt="">
+  <div class="ov"></div>
+  <div class="badge"><span class="at">@</span><span class="h">reiki.brasilia</span></div>
+  <img class="book" src="book-crop.png" alt="">
+  <div class="txt">
+    <div class="eyebrow">E-book · Guia prático</div>
+    <div class="line"></div>
+    <h1>Da insegurança ao primeiro cliente</h1>
+    <div class="sub">O passo a passo do reikiano recém-iniciado</div>
+    <div class="price">
+      <div class="from">de <s>R$ 97</s> por</div>
+      <div class="big">R$ 29,90</div>
+      <div class="mode">pagamento único · acesso imediato</div>
+    </div>
+    <div class="pill"><b>✓</b> Garantia de 7 dias</div>
+    <div class="author"><b>Mestre Renato Menezes</b> · Reiki Nível IV</div>
+  </div>
+</div>
+</body></html>
