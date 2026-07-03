@@ -1,14 +1,19 @@
 # Playbook — Próximas Fases · O Caminho do Reikiano Iniciante
 
-> Documento de retomada **para o Notebook 2 (escritório)** e sessões futuras. Contém tudo o que é preciso para continuar sem depender do histórico de chat. Atualizado 03/07/2026.
+> Documento de retomada **para o Notebook 1 (casa) e Notebook 2 (escritório)** e sessões futuras. Contém tudo o que é preciso para continuar sem depender do histórico de chat. Atualizado 03/07/2026 (pós-lançamento do e-book).
 
 ## 0. Estado do projeto em uma tela
 
 | Fase | Status |
 |---|---|
 | F0 Setup · F1 E-book v2 · F2 Briefing · F2b Diagramação · F3 Curso+roteiros | ✅ concluídas |
-| **F4 Landing page** | ✅ **build concluído** (`copy.md` + `index.html` + `questionario-qualificacao.md`) — falta só o **gate de deploy** (pendências do Renato: checkout Eduzz + push do commit `a9a1019`) |
-| **F5 Verificação de coerência** | ✅ **concluída** — `docs/relatorio-verificacao.md` (veredito: APROVADO; sem bloqueador de conformidade; 2 recomendações opcionais) |
+| **F4 Landing page** | ✅ **NO AR e vendendo** — `reikibrasilia.br.com/ebook` (DirectAdmin, subpasta, autossuficiente); botão → checkout Eduzz real (`chk.eduzz.com/7WXGD8240A`); webhook lista de espera ativo. Fluxo testado ponta a ponta. |
+| **F5 Verificação de coerência** | ✅ **concluída** — `docs/relatorio-verificacao.md` (APROVADO) |
+| **Produto Eduzz (e-book R$ 29,90)** | ✅ **publicado** — imagem `design/eduzz/capa-eduzz-quadrada.png`, entrega PDF `design/eduzz/O-Caminho-do-Reikiano-Iniciante.pdf` (65 págs, foto real do autor, páginas centralizadas, logos ok) |
+| **F6 Videoaulas do curso** | ⏭️ **PRÓXIMA FASE** — 20 aulas HeyGen (roteiros prontos). Ver §9. |
+| F7 Montagem do curso (Nutror) + trilhas de e-mail | ⏳ após F6 |
+
+**Onde estão as coisas agora:** e-book (funil de entrada) 100% no ar. O próximo grande bloco é o **curso** (upsell R$ 197–297): produzir as videoaulas → subir no Nutror → ativar a lista de espera.
 
 **Spec da F4 (fonte da verdade):** `docs/superpowers/specs/2026-07-03-f4-landing-page-design.md`
 **Plano mestre:** `PLANO-EXECUCAO.md`
@@ -112,3 +117,48 @@ Checklist: voz única entre e-book/curso/LP · preços conferidos com a memória
 - **python/python3 NÃO estão no PATH do git-bash** aqui → usar **PowerShell** para parsear JSON (`ConvertFrom-Json`).
 - **node** não resolve caminhos estilo `/c/...` no `require()` → passar arquivo direto ao `curl --data @` em vez de pré-processar com node.
 - Groq Whisper (`whisper-large-v3`) transcreve MP4 direto — dispensa o pipeline `claude-video`/`watch.py` (que é efêmero no sandbox).
+- **Chrome headless** (`--print-to-pdf` e `--screenshot`) está disponível e é o motor de PDF/artes: renderiza HTML do design v3 com fidelidade. Para PDF: reescrever URLs raw GitHub → caminho local + `print-color-adjust:exact` (senão fundos escuros saem brancos). **Pillow** e **PyMuPDF** (`pip install pymupdf`) disponíveis para compor/rasterizar/verificar.
+
+---
+
+## 9. F6 — Produção das videoaulas (COMO GERAR) ⏭️ próxima fase
+
+**Fonte da verdade:** grade em `curso/grade-curricular.md`; roteiros prontos (HeyGen-ready) em `curso/roteiros/M0.md … M5.md`.
+**Escopo:** 20 aulas · 6 módulos (M0–M5) · 4–7 min cada (~550–900 palavras) · avatar **HeyGen** (clone do Renato, busto, fundo violeta/grafite) · plataforma **Nutror/Eduzz** · ticket R$ 197–297.
+
+### Passo a passo
+1. **[Renato] Avatar + voz no HeyGen** — criar/validar o **clone do Renato** (busto, fundo neutro escuro coerente com a marca) e, de preferência, **clone de voz** (autenticidade). Requer gravação de treino + consentimento biométrico — só o Renato faz.
+2. **[Claude] Slides de apoio** — cada roteiro traz a nota `Slide:`/`Slide de apoio:`. Gerar os slides (título + até 3 bullets, **design v3**, 1920×1080) pelo mesmo pipeline HTML→PNG (Chrome headless) usado no e-book/Eduzz. Entregar prontos para inserir como B-roll/tela cheia entre blocos.
+3. **[Renato/Claude] Montagem por aula no HeyGen** — colar **apenas o texto do bloco `ROTEIRO`** no editor de script (não colar cabeçalhos nem marcações de cena). `[PAUSA]` = recurso de pausa do editor ou "..."; **negrito** = ênfase. Rodar a **prévia de voz** e ajustar naturalidade. Inserir os slides do passo 2.
+4. **Render + nomeação** — 1 vídeo por aula, 4–7 min. Padrão: `M{n}-A{k}-titulo.mp4` (ex.: `M1-A05-sentindo-a-energia.mp4`).
+5. **[Claude] Materiais de apoio** citados na grade (gerar os que faltam, design v3): mapa da jornada (PDF), checklists ("Estou me bloqueando ou evoluindo?"), templates de mensagem, planilha de registro de sessões, tabela das 9 dificuldades. O **Diário do Reikiano** já existe (bônus do e-book).
+6. **Revisão de conformidade** (igual F5): sem "milenar" (Mikao Usui **1922**), sem promessa de cura/renda, disclaimer PNPIC quando citar saúde.
+
+### Divisão de trabalho
+- **Só o Renato:** conta HeyGen, treinar/aprovar avatar e voz (biometria/consentimento), render final, upload no Nutror.
+- **Claude pode fazer sem HeyGen:** slides de apoio (PNG/PDF), PDFs/planilhas de apoio, thumbnails das aulas, revisão/ajuste fino dos roteiros, títulos e descrições das aulas, sequência de e-mails de conclusão de módulo.
+
+### Ordem sugerida
+M0 (2 aulas) → M1 (4) → M2 (4) → M3 (4) → M4 (3) → M5 (3). Começar por **M0+M1** (prova de conceito do avatar/voz + primeiro módulo entregável).
+
+### Conversão embutida (já nos roteiros)
+- **A18** → oferta da **mentoria individual** (R$ 197/sessão); **A20** → **Nível II presencial** (condição de aluno) + convite à comunidade Om Reiki Om.
+
+---
+
+## 10. Infra de publicação (aprendida nesta sessão — p/ atualizar a LP no ar)
+
+- **Hospedagem:** DirectAdmin (napoleon) · painel `https://pro127.dnspro.net.br:2222/evo/` (login do Renato) · usuário `reik2545`. Web root: `~/domains/reikibrasilia.br.com/public_html`. LP na subpasta **`/ebook`**.
+- **Pacote de deploy autossuficiente:** `landing-page-deploy/` (index.html + `assets/`, imagens locais, **sem** dependência do raw GitHub) + `landing-page-deploy.zip`. Gerado reescrevendo `raw.githubusercontent…/design/canva-import/` → `assets/` no `landing-page/index.html` e copiando os 3 PNGs para `assets/`.
+- **Publicar/atualizar via Terminal de comando do painel** (upload pela automação do navegador é **bloqueado** — só aceita arquivos anexados ao chat). Como o repo é **público**, o deploy é por `git clone` no servidor:
+  ```bash
+  cd ~/domains/reikibrasilia.br.com/public_html
+  git clone --depth 1 https://github.com/dpfrenatorms/caminho-reikiano-iniciante.git /tmp/x
+  cp -r /tmp/x/landing-page-deploy/* ebook/ && rm -rf /tmp/x
+  ```
+  ⚠️ Se `landing-page-deploy/` ainda não estiver no push, montar a partir de `landing-page/index.html` no servidor com `sed` (raw→assets) + copiar os PNGs de `design/canva-import/`.
+- **Trocar o checkout na LP no ar:** editar SÓ a linha de atribuição `var CHECKOUT_URL = "…"` — **não** tocar no sentinela `"COLE_EDUZZ_29_90"` da comparação. No servidor: `sed -i 's#var CHECKOUT_URL = "URL_ANTIGA"#var CHECKOUT_URL = "URL_NOVA"#' ebook/index.html`.
+- **Atualizar um asset no ar** (ex.: foto): `git clone` no terminal + `cp /tmp/x/design/canva-import/<arquivo> ebook/assets/<arquivo>`.
+- **Terminal do painel:** ao reabrir, o primeiro `type` costuma não registrar (sessão reconecta) — clicar e digitar de novo. Comandos com acento/`·` funcionam; para segurança, usar `[^<]*` no *match* e reservar não-ASCII só para a *substituição*.
+- **Checkout Eduzz atual:** `https://chk.eduzz.com/7WXGD8240A`. **Webhook lista de espera:** `https://reikibrasilia.app.n8n.cloud/webhook/reiki-lista-espera` (§2).
+- **Foto do autor:** `design/canva-import/foto-autor-circulo.png` = recorte circular 600×600 de `artefatos/Ensaio-403.jpg` (fotos profissionais em `artefatos/Ensaio-*.jpg`, `FOTO 14 - REIKI I.jpg`).
