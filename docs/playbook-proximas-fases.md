@@ -7,8 +7,8 @@
 | Fase | Status |
 |---|---|
 | F0 Setup · F1 E-book v2 · F2 Briefing · F2b Diagramação · F3 Curso+roteiros | ✅ concluídas |
-| **F4 Landing page** | 🔨 **em implementação** — spec aprovado (gate condicional), insumos quase todos prontos |
-| F5 Verificação de coerência | ⏳ após F4 |
+| **F4 Landing page** | ✅ **build concluído** (`copy.md` + `index.html` + `questionario-qualificacao.md`) — falta só o **gate de deploy** (pendências do Renato: checkout Eduzz + push do commit `a9a1019`) |
+| F5 Verificação de coerência | ⏳ pronta para começar (build da F4 finalizado) |
 
 **Spec da F4 (fonte da verdade):** `docs/superpowers/specs/2026-07-03-f4-landing-page-design.md`
 **Plano mestre:** `PLANO-EXECUCAO.md`
@@ -64,26 +64,29 @@ curl -s "https://api.groq.com/openai/v1/audio/transcriptions" \
 
 ---
 
-## 4. F4 — o que falta construir
+## 4. F4 — build (✅ CONCLUÍDO 03/07/2026)
 
-Ordem: **`copy.md` → `index.html` → `questionario-qualificacao.md`** (pasta `landing-page/`).
+Os 3 entregáveis estão na pasta `landing-page/`. Renderização validada em desktop e mobile (preview local via `python -m http.server`, design v3 fiel, zero erro de console).
 
-1. **`copy.md`** — copy AIDA das 12 seções (spec §5), voz da marca, e-book R$ 29,90 como herói, lista de espera secundária no rodapé.
-2. **`index.html`** — página única, mobile-first, design v3, com:
-   - Webhook **real** já embutido: `https://reikibrasilia.app.n8n.cloud/webhook/reiki-lista-espera` (POST JSON, payload no spec §6).
-   - Checkout com placeholder marcado `data-checkout="COLE_EDUZZ_29_90"` (texto do botão já mostra R$ 29,90).
-   - Depoimentos reais (§3). Primeira dobra completa (para quem / dor / o que recebe / preço / CTA). Mobile que vende.
-3. **`questionario-qualificacao.md`** — 7 perguntas → 3 segmentos (Praticante Pessoal / Aspirante a Terapeuta / Terapeuta em Transição) + trilhas de e-mail, alinhado ao payload do webhook.
+1. ✅ **`copy.md`** — copy AIDA das 12 seções (spec §5), voz da marca, e-book R$ 29,90 como herói, lista de espera secundária no rodapé.
+2. ✅ **`index.html`** — página única autocontida, mobile-first, design v3 (tokens roxo/ciano, League Spartan/Playfair/Inter, marcador ■), com:
+   - Webhook **real** embutido no `data-webhook` do form: `https://reikibrasilia.app.n8n.cloud/webhook/reiki-lista-espera` (envio `fetch` POST JSON, payload conforme spec §6; sucesso "Você está na lista! 🌸", erro → fallback WhatsApp).
+   - Checkout com placeholder marcado `data-checkout="COLE_EDUZZ_29_90"` + constante JS `CHECKOUT_URL` (todos os 4 CTAs primários; texto já mostra R$ 29,90). **Trocar a constante pela URL da Eduzz no deploy.**
+   - 4 depoimentos reais (§3), Rafaela como âncora. Primeira dobra completa (para quem / dor / o que recebe / preço / CTA) + **sticky CTA no mobile**.
+   - Imagens via raw GitHub (bg-opener-v3, bg-cover-v3, foto-autor-circulo, logo) → **quebram até o push do `a9a1019`** (§6). O layout degrada com alt text; resolve sozinho após o push.
+3. ✅ **`questionario-qualificacao.md`** — 7 perguntas → 3 segmentos (Praticante Pessoal / Aspirante a Terapeuta / Terapeuta em Transição) + 3 trilhas de e-mail + contrato do payload, alinhado ao webhook.
+
+> **Config auxiliar criada:** `.claude/launch.json` (server estático `lp-reikiano` na porta 8123) para preview local — não versionado (dentro de `.claude/`).
 
 ---
 
 ## 5. Gate de deploy da LP (spec §10) — só publicar quando os 5 estiverem OK
 
-1. [ ] Botão de compra com **checkout Eduzz real** R$ 29,90 (sem placeholder) — **pendência do Renato**
-2. [ ] Primeira dobra vendendo só o e-book — ✅ no spec (validar no HTML)
-3. [x] Depoimentos reais inseridos — transcritos; falta integrar na copy/HTML
-4. [x] Webhook testado — no ar e validado
-5. [ ] Revisão de conformidade (sem cura/renda, Mikao Usui 1922, disclaimer PNPIC) — na F5
+1. [ ] Botão de compra com **checkout Eduzz real** R$ 29,90 (sem placeholder) — **pendência do Renato** (trocar `CHECKOUT_URL` no `index.html`)
+2. [x] Primeira dobra vendendo só o e-book — ✅ implementada e validada no HTML (curso só aparece na §11 secundária)
+3. [x] Depoimentos reais inseridos — ✅ os 4 integrados na §6 do `index.html` e da `copy.md`
+4. [x] Webhook testado — no ar e validado; form da LP envia o payload §6
+5. [ ] Revisão de conformidade (sem cura/renda, Mikao Usui 1922, disclaimer PNPIC) — na F5 (disclaimer já no rodapé; varredura final pendente)
 
 ---
 
