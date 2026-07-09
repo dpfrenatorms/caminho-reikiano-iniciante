@@ -128,7 +128,7 @@ Além disso, na entrega final: **capa do curso** (produto Eduzz), **banner de vi
 | **Vídeo curto do Renato** — script pronto | Renato (grava) | ✅ **gravado e embutido** (2:01, fundo liso do avatar). Master em `artefatos/` (fora do git); web em `landing-page/assets/upsell-renato.mp4`; roteiro em `curso/narracao/UPSELL-video-renato.txt` |
 | **Método Mãos Seguras** (mecanismo) + tabela e-book × curso | Claude | `curso/upsell/metodo-maos-seguras.md` ✅ |
 | **4 bônus** (Checklist Sessão Segura, Roteiro de Conversa, Plano 21 Dias, Guia de Objeções) em PDF | Claude | ✅ **feitos** — `curso/upsell/bonus/` (4–5 págs cada, design v3, organizados pelos 6 passos do Método Mãos Seguras; conteúdo derivado do e-book; conformidade verificada) |
-| **Kit visual do curso:** capa do produto (1080×1080), banner de vitrine/checkout (1200×628 e 1200×400), imagem de conclusão | Claude | `curso/design/` (padrão `design/eduzz/`) |
+| **Kit visual do curso:** capa do produto (1080×1080), banner de vitrine/checkout (1200×628 e 1200×400), imagem de conclusão | Claude | ✅ **feito** — `curso/design/produto/` (estende a linguagem das capas de módulo; sem preço nas artes; ver `produto/README.md`) |
 | 3 trilhas de e-mail por segmento (Praticante Pessoal / Aspirante a Terapeuta / Terapeuta em Transição) | Claude | `curso/email/` — sequências alinhadas ao `questionario-qualificacao.md` |
 | **Rastreamento** de compra do e-book, upsell aceito e upsell recusado | Renato | pixels/eventos na Eduzz |
 | Política de preço/garantia do curso (7 dias CDC) | Renato (decisão) | ✅ definida |

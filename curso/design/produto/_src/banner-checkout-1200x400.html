@@ -1,0 +1,55 @@
+<!DOCTYPE html><html lang='pt-BR'><head><meta charset='utf-8'></head><body><style>
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@1,400;1,700&family=Inter:wght@300;400;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif}
+.art{position:relative;overflow:hidden;color:#fff;
+  display:flex;flex-direction:column;justify-content:center;
+  background:radial-gradient(ellipse 90% 80% at 6% 4%, #2C0E52 0%, #1B0833 46%, #0E0521 100%)}
+.fotocap{position:absolute;text-align:center;font-size:12.5px;color:#8F7FB5;letter-spacing:.03em;line-height:1.5}
+.eyebrow{font-family:'League Spartan',sans-serif;font-weight:800;color:#3FD8E8;text-transform:uppercase}
+.rule{background:#3FD8E8;height:3px}
+h1{font-family:'League Spartan',sans-serif;font-weight:900;text-transform:uppercase;line-height:1.03;color:#fff}
+.sub{font-family:'Playfair Display',serif;font-style:italic;color:#CDB8F0}
+.metodo{font-family:'League Spartan',sans-serif;font-weight:800;color:#EDE6FA;letter-spacing:.14em;text-transform:uppercase}
+.metodo i{color:#3FD8E8;font-style:normal;margin-right:9px}
+.meta{color:#CDB8F0}
+.foto{border-radius:50%;border:3px solid #8E3FC7;object-fit:cover}
+/* rodape padrao das capas de modulo */
+.foot{position:absolute;left:0;right:0;display:flex;justify-content:space-between;align-items:center}
+.foot::before{content:"";position:absolute;top:-16px;left:0;right:0;height:1px;background:rgba(205,184,240,.28)}
+.foot .b{font-family:'League Spartan',sans-serif;font-weight:800;color:#3FD8E8;letter-spacing:.2em;font-size:13px}
+.foot .u{color:#8F7FB5;font-size:12px;letter-spacing:.04em}
+/* chips dos 6 passos */
+.steps{display:flex;flex-wrap:wrap}
+.chip{border:1.5px solid rgba(63,216,232,.5);border-radius:30px;color:#EDE6FA;
+  font-family:'League Spartan',sans-serif;font-weight:700;letter-spacing:.04em}
+.chip b{color:#3FD8E8;margin-right:7px}
+.trust{display:flex}
+.trust span{font-family:'League Spartan',sans-serif;font-weight:700;color:#fff;white-space:nowrap}
+.trust b{color:#3FD8E8;margin-right:7px}
+
+html,body{width:1200px;height:400px} .art{width:1200px;height:400px}
+.wrap{position:absolute;left:330px;top:50%;transform:translateY(-50%);width:600px}
+.eyebrow{font-size:16px;letter-spacing:.2em}
+h1{font-size:37px;margin:12px 0 8px} .sub{font-size:19px}
+.trust{gap:22px;margin-top:22px} .trust span{font-size:16px}
+.foto{width:190px;height:190px;position:absolute;left:82px;top:50%;transform:translateY(-50%)}
+img.logo{position:absolute;right:64px;top:50%;transform:translateY(-50%);width:126px;opacity:.92}
+.glow{position:absolute;right:-120px;top:-140px;width:520px;height:520px;
+  background:radial-gradient(circle, rgba(63,216,232,.20), rgba(63,216,232,0) 68%)}
+</style>
+<div class="art">
+  <div class="glow"></div>
+  <img class="foto" src="../../../../design/canva-import/foto-autor-circulo.png" alt="Renato Menezes"/>
+  <div class="wrap">
+    <div class="eyebrow">Curso online · Método Mãos Seguras</div>
+    <h1>O Caminho do<br/>Reikiano Iniciante</h1>
+    <div class="sub">Da primeira aplicação ao primeiro cliente</div>
+    <div class="trust">
+      <span><b>✓</b>Acesso imediato</span>
+      <span><b>✓</b>Garantia de 7 dias</span>
+      <span><b>✓</b>Estude no seu ritmo</span>
+    </div>
+  </div>
+  <img class="logo" src="../../../../design/canva-import/logo-omreikiom.png" alt="Om Reiki Om"/>
+</div></body></html>
