@@ -166,8 +166,18 @@ Reiki é uma prática integrativa e complementar (PNPIC), que não substitui tra
 - [x] **Vídeo curto do Renato gravado e embutido** (2:01, player com poster)
 - [x] Tabela e-book × curso presente
 - [x] Claims revisados (sem cura/renda/resultado garantido; disclaimer PNPIC no rodapé; Mikao Usui 1922)
-- [ ] Publicar a página (ex.: `reikibrasilia.br.com/ebook/upsell`) **ou** colar a copy na config de upsell do Eduzz
-- [ ] **CTA de aceite e de recusa configurados na Eduzz** → colar as URLs nas constantes `UPSELL_ACCEPT_URL` / `UPSELL_DECLINE_URL` do `upsell.html`
-- [ ] **E-book entregue mesmo se o aluno recusar** o upsell (config Eduzz)
-- [ ] Rastreamento: compra do e-book, upsell aceito, upsell recusado
-- [~] **Lista de espera da LP inicial** (§11 do `landing-page/index.html`): decisão de 09/07/2026 — **manter como está por ora**, porque o curso ainda não está gravado. Revisar quando o curso for ao ar.
+### ⛔ Guard: NÃO publicar esta página ainda
+
+**O curso ainda não existe** — as 20 aulas não foram gravadas nem montadas no Nutror. Publicar esta página venderia um produto inexistente (problema de conformidade e de confiança).
+
+**A página só vai ao ar no Sprint 5 (go-live)**, depois de:
+- **Sprints 1–3** — gravar as 20 aulas (M0→M5)
+- **Sprint 4** — montar no Nutror + criar o produto/order bump na Eduzz
+
+Destino no go-live: `reikibrasilia.br.com/ebook/upsell` **ou** a config de upsell nativa da Eduzz.
+
+- [ ] *(Sprint 5)* Publicar a página
+- [ ] *(Sprint 5)* **CTA de aceite e de recusa configurados na Eduzz** → colar as URLs nas constantes `UPSELL_ACCEPT_URL` / `UPSELL_DECLINE_URL` do `upsell.html`
+- [ ] *(Sprint 5)* **E-book entregue mesmo se o aluno recusar** o upsell (config Eduzz)
+- [ ] *(Sprint 5)* Rastreamento: compra do e-book, upsell aceito, upsell recusado
+- [~] **Lista de espera da LP inicial** (§11 do `landing-page/index.html`): decisão de 09/07/2026 — **manter como está** até o curso ser gravado e lançado. A remoção acontece no **Sprint 5**, junto com o go-live do upsell (ver `docs/plano-sprints-curso.md`).

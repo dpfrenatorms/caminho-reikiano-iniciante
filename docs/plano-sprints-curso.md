@@ -124,8 +124,8 @@ Além disso, na entrega final: **capa do curso** (produto Eduzz), **banner de vi
 |---|---|---|
 | Estrutura completa no Nutror (20 aulas + materiais + capas de módulo) | Renato | área de membros pronta |
 | Produto "curso" na Eduzz (**R$ 197,00**) + **order bump** no checkout do e-book | Renato | ver §4 (order bump no checkout do e-book R$ 29,90) |
-| **Página de upsell separada** (copy pronta) + HTML design v3 | Claude | `curso/upsell/pagina-upsell.md` ✅ → HTML |
-| **Vídeo curto do Renato (3–6 min)** — script pronto | Renato (grava) | `curso/narracao/UPSELL-video-renato.txt` ✅ |
+| **Página de upsell separada** (copy pronta) + HTML design v3 | Claude | ✅ **feita** — `landing-page/upsell.html` (+ `assets/`); copy canônica em `curso/upsell/pagina-upsell.md`. ⛔ **Não publicar antes do Sprint 5** |
+| **Vídeo curto do Renato** — script pronto | Renato (grava) | ✅ **gravado e embutido** (2:01, fundo liso do avatar). Master em `artefatos/` (fora do git); web em `landing-page/assets/upsell-renato.mp4`; roteiro em `curso/narracao/UPSELL-video-renato.txt` |
 | **Método Mãos Seguras** (mecanismo) + tabela e-book × curso | Claude | `curso/upsell/metodo-maos-seguras.md` ✅ |
 | **4 bônus** (Checklist Sessão Segura, Roteiro de Conversa, Plano 21 Dias, Guia de Objeções) em PDF | Claude | `curso/upsell/bonus/` |
 | **Kit visual do curso:** capa do produto (1080×1080), banner de vitrine/checkout (1200×628 e 1200×400), imagem de conclusão | Claude | `curso/design/` (padrão `design/eduzz/`) |
