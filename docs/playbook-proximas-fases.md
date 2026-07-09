@@ -118,6 +118,7 @@ Checklist: voz única entre e-book/curso/LP · preços conferidos com a memória
 - **node** não resolve caminhos estilo `/c/...` no `require()` → passar arquivo direto ao `curl --data @` em vez de pré-processar com node.
 - Groq Whisper (`whisper-large-v3`) transcreve MP4 direto — dispensa o pipeline `claude-video`/`watch.py` (que é efêmero no sandbox).
 - **Chrome headless** (`--print-to-pdf` e `--screenshot`) está disponível e é o motor de PDF/artes: renderiza HTML do design v3 com fidelidade. Para PDF: reescrever URLs raw GitHub → caminho local + `print-color-adjust:exact` (senão fundos escuros saem brancos). **Pillow** e **PyMuPDF** (`pip install pymupdf`) disponíveis para compor/rasterizar/verificar.
+- ⚠️ **Sincronização entre notebooks: leia `docs/LEIA-ME-SYNC.md` ANTES de rodar `export.ps1`/`import.ps1`.** Regra: **git junta, robocopy substitui**. `push` ao sair da máquina, `pull` ao chegar. Em 09/07/2026 as máquinas divergiram e um `import` teria destruído commits não pushados.
 
 ---
 
