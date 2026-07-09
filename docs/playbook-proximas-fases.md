@@ -10,8 +10,8 @@
 | **F4 Landing page** | ✅ **NO AR e vendendo** — `reikibrasilia.br.com/ebook` (DirectAdmin, subpasta, autossuficiente); botão → checkout Eduzz real (`chk.eduzz.com/7WXGD8240A`); webhook lista de espera ativo. Fluxo testado ponta a ponta. |
 | **F5 Verificação de coerência** | ✅ **concluída** — `docs/relatorio-verificacao.md` (APROVADO) |
 | **Produto Eduzz (e-book R$ 29,90)** | ✅ **publicado** — imagem `design/eduzz/capa-eduzz-quadrada.png`, entrega PDF `design/eduzz/O-Caminho-do-Reikiano-Iniciante.pdf` (65 págs, foto real do autor, páginas centralizadas, logos ok) |
-| **F6 Videoaulas do curso** | ⏭️ **PRÓXIMA FASE** — 20 aulas HeyGen (roteiros prontos). Ver §9. |
-| F7 Montagem do curso (Nutror) + trilhas de e-mail | ⏳ após F6 |
+| **F6 Videoaulas do curso** | ⏭️ **EM ANDAMENTO** — 20 aulas HeyGen (roteiros prontos). M0+M1 já iniciados. Ver §9. |
+| F7 Montagem do curso (Nutror) + **upsell R$197** + trilhas de e-mail | ⏳ após F6 — **upsell já especificado/construído**: `landing-page/upsell.html` + `landing-page/upsell-copy.md` (Método Mãos Seguras, comparação e-book×curso, CTAs sim/não). Bloqueado por: gravar vídeo do Renato + configurar upsell one-click no Eduzz + garantir entrega do e-book se recusar. **Decisão 09/07: manter a lista de espera na LP inicial por ora** (curso ainda não gravado). |
 
 **Onde estão as coisas agora:** e-book (funil de entrada) 100% no ar. O próximo grande bloco é o **curso** (upsell R$ 197–297): produzir as videoaulas → subir no Nutror → ativar a lista de espera.
 
