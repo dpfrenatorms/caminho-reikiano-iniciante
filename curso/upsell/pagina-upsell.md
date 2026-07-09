@@ -111,11 +111,11 @@ No curso, o Mestre Renato te guia, aula por aula, pelo **Método Mãos Seguras**
 - Aulas curtas e diretas, uma prática aplicável por dia
 - Estude no seu ritmo, quando e quantas vezes quiser
 
-**Bônus (ferramentas de aplicação):**
-1. **Checklist Sessão Segura** — para revisar tudo antes de aplicar
-2. **Roteiro de Conversa com o Cliente** — o que falar antes e depois da sessão
-3. **Plano 21 Dias de Prática** — para transformar estudo em rotina
-4. **Guia de Objeções do Reikiano Iniciante** — para lidar com medo, cobrança e dúvidas comuns
+**Bônus (ferramentas de aplicação)** — ✅ **os 4 PDFs estão prontos** em `curso/upsell/bonus/` (ver `bonus/README.md`):
+1. **Checklist Sessão Segura** — para revisar tudo antes de aplicar *(4 págs, com caixas para marcar)*
+2. **Roteiro de Conversa com o Cliente** — o que falar antes e depois da sessão *(4 págs, frases prontas)*
+3. **Plano 21 Dias de Prática** — para transformar estudo em rotina *(4 págs, grade para imprimir)*
+4. **Guia de Objeções do Reikiano Iniciante** — para lidar com medo, cobrança e dúvidas comuns *(5 págs, 9 objeções)*
 
 ---
 

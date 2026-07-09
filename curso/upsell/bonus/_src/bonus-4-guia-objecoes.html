@@ -1,0 +1,163 @@
+<!DOCTYPE html><html lang='pt-BR'><head><meta charset='utf-8'><title>bonus-4-guia-objecoes</title><style>
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@1,400;1,700&family=Inter:wght@300;400;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:#e8e4ee}
+section.page{width:794px;height:1123px;position:relative;overflow:hidden;margin:0 auto 24px;background:#fff}
+
+/* ---------- capa ---------- */
+.cover{background:#1a1040;color:#fff;text-align:center}
+img.bg{position:absolute;top:0;left:0;width:794px;height:1123px;z-index:0}
+.cv-in{position:relative;z-index:2;margin-top:300px;padding:0 80px}
+.cv-eyebrow{font-family:'League Spartan',sans-serif;font-weight:800;font-size:14px;letter-spacing:.28em;color:#3FD8E8}
+.cv-line{width:110px;height:2px;background:#3FD8E8;margin:20px auto 30px}
+.cv-title{font-family:'League Spartan',sans-serif;font-weight:900;font-size:42px;line-height:1.1;
+ text-transform:uppercase;text-shadow:0 3px 14px rgba(22,8,45,.85)}
+.cv-sub{font-family:'Playfair Display',serif;font-style:italic;font-size:20px;color:#CDB8F0;margin-top:24px;line-height:1.5}
+.cv-meta{font-size:12.5px;color:#EDE6FA;margin-top:40px;letter-spacing:.06em;line-height:1.7}
+img.logo{position:absolute;bottom:44px;left:337px;width:120px;z-index:3}
+
+/* ---------- miolo ---------- */
+.light{padding:76px 78px 84px;color:#2B2B2B;display:flex;flex-direction:column;justify-content:center}
+.hd{position:absolute;top:34px;left:78px;right:78px;display:flex;justify-content:space-between;
+ font-size:9.5px;color:#a89bc0;letter-spacing:.08em;font-weight:300;text-transform:uppercase}
+.ft{position:absolute;bottom:32px;left:0;right:0;text-align:center;font-size:11px;color:#6A10AD;font-weight:600}
+.ft span{color:#d5c8e8;margin:0 10px}
+h2{font-family:'League Spartan',sans-serif;font-weight:800;color:#6A10AD;font-size:21px;margin:0 0 6px}
+h2.sa{font-size:28px;margin-bottom:14px}
+h3{font-family:'League Spartan',sans-serif;font-weight:700;color:#8E3FC7;font-size:15px;margin:22px 0 8px}
+p{font-size:13.5px;line-height:1.65;margin:0 0 11px}
+.sq{color:#6A10AD;font-size:14px;margin-right:6px}
+.intro{font-size:13.5px;line-height:1.7;color:#4a4a4a;margin-bottom:18px}
+ul,ol{margin:4px 0 14px 20px}
+li{font-size:13.5px;line-height:1.6;margin-bottom:6px}
+
+/* caixa de citação / frase de apoio */
+.cit{border-left:3px solid #6A10AD;padding:9px 16px;margin:12px 0 16px;font-family:'Playfair Display',serif;
+ font-style:italic;font-size:14.5px;color:#3d1466;line-height:1.55}
+/* caixa de template */
+.tpl{background:#FAF0DC;border-radius:10px;padding:15px 18px;margin:12px 0 16px;font-size:13px;line-height:1.6}
+.tpl-t{font-family:'League Spartan',sans-serif;font-weight:800;font-size:10px;letter-spacing:.14em;color:#8a6d1f;margin-bottom:7px}
+/* caixa lavanda */
+.box{background:#F5EEFF;border-left:4px solid #6A10AD;border-radius:8px;padding:14px 18px;margin:12px 0 16px}
+.box p{margin:0;font-size:13px}
+/* checkbox printável */
+.cb{display:inline-block;width:13px;height:13px;border:1.6px solid #6A10AD;border-radius:3px;
+ margin-right:9px;vertical-align:-2px}
+.ck{list-style:none;margin-left:0}
+.ck li{margin-bottom:9px}
+/* linha para preencher */
+.fill{border-bottom:1px dotted #b9a9d4;height:20px;margin:0 0 9px}
+/* tabela */
+table{width:100%;border-collapse:collapse;margin:10px 0 16px;font-size:12.5px}
+th{background:#6A10AD;color:#fff;font-weight:700;padding:8px 9px;text-align:left;font-family:'League Spartan',sans-serif}
+td{padding:7px 9px;border-bottom:.5px solid #ddd;vertical-align:top}
+tbody tr:nth-child(even){background:#F5EEFF}
+/* grade 21 dias */
+.grid21{display:grid;grid-template-columns:repeat(7,1fr);gap:7px;margin:10px 0 8px}
+.day{border:1.4px solid #cdbce6;border-radius:7px;height:58px;position:relative;background:#fff}
+.day b{position:absolute;top:5px;left:7px;font-family:'League Spartan',sans-serif;font-size:11px;color:#8E3FC7}
+.wk{font-family:'League Spartan',sans-serif;font-weight:800;font-size:11px;letter-spacing:.12em;color:#6A10AD;margin:14px 0 4px}
+.fine{font-size:10.5px;color:#6B6B6B;line-height:1.6}
+
+@media print{
+ html,body{margin:0;padding:0;background:#fff}
+ section.page{margin:0 auto !important;page-break-after:always;break-after:page}
+ section.page:last-child{page-break-after:auto}
+}
+@page{size:210mm 297mm;margin:0}
+*{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important}
+</style></head><body><section class="page cover">
+  <img class="bg" src="../../../../design/canva-import/bg-opener-v3.png" alt=""/>
+  <div class="cv-in">
+    <div class="cv-eyebrow">Bônus 4 · Curso O Caminho do Reikiano Iniciante</div>
+    <div class="cv-line"></div>
+    <div class="cv-title">Guia de Objeções<br/>do Reikiano Iniciante</div>
+    <div class="cv-sub">Medo, cobrança, insegurança e as dúvidas que travam a prática.</div>
+    <div class="cv-meta">9 objeções reais · o que está acontecendo · o que fazer<br/>Mestre Renato Menezes · Om Reiki Om</div>
+  </div>
+  <img class="logo" src="../../../../design/canva-import/logo-omreikiom.png" alt="Om Reiki Om"/>
+</section><section class="page light">
+  <div class="hd"><span>Método Mãos Seguras</span><span>Guia de Objeções</span></div>
+  
+  <h2 class="sa">Nenhuma dessas dúvidas é sinal de fracasso</h2>
+  <p class="intro">Todo reikiano iniciante passa por elas. O que separa quem pratica de quem guarda o certificado na gaveta não é a ausência de dúvida — é ter uma resposta pronta para ela. Consulte este guia sempre que travar.</p>
+  
+  <h2><span class="sq">■</span> 1. "Não sinto nada nas mãos"</h2>
+  <p><strong>O que está acontecendo:</strong> no início, o corpo e a percepção ainda estão em ajuste energético. Nem todo mundo sente calor logo de cara — e isso não significa nada sobre a sua capacidade.</p>
+  <p><strong>O que fazer:</strong></p>
+  <ul><li>Pratique o autotratamento diariamente;</li><li>Coloque a intenção com confiança, mesmo sem 'sentir' — a energia flui pela intenção e presença;</li><li>Observe as sensações no corpo do receptor, não só nas suas mãos;</li><li>Solte a expectativa: a percepção costuma vir com o tempo.</li></ul>
+  <div class="cit">A energia flui onde há intenção, confiança e prática — não onde há perfeição.</div>
+  
+  <h2><span class="sq">■</span> 2. "E se a pessoa disser que não sentiu nada?"</h2>
+  <p><strong>O que está acontecendo:</strong> o Reiki atua em níveis sutis. Muitas vezes os efeitos são progressivos e internos, e aparecem nas 24 a 48 horas seguintes.</p>
+  <p><strong>O que fazer:</strong></p>
+  <ul><li>Avise antes: 'cada pessoa reage de uma forma';</li><li>Peça para observar o sono, o ânimo e o corpo nos dias seguintes;</li><li>Anote o retorno recebido — é assim que você acompanha o progresso;</li><li>Lembre-se: não é o seu papel curar ninguém.</li></ul>
+  <div class="cit">Não é você que cura. O Reiki apoia o processo de equilíbrio — e cada um tem o seu tempo.</div>
+
+  <div class="ft"><span>—</span>2<span>—</span></div>
+</section><section class="page light">
+  <div class="hd"><span>Método Mãos Seguras</span><span>Guia de Objeções</span></div>
+  
+  
+  <h2><span class="sq">■</span> 3. "Tenho medo de fazer errado"</h2>
+  <p><strong>O que está acontecendo:</strong> perfeccionismo somado à falta de confiança trava a prática. O Reiki é natural, fluido e intuitivo — precisa ser sincero, não 'certinho'.</p>
+  <p><strong>O que fazer:</strong></p>
+  <ul><li>Lembre-se: o Reiki não depende de você, mas passa por você;</li><li>Foque na presença, não na perfeição;</li><li>Autotratamento constante gera segurança crescente;</li><li>Converse com outros reikianos e normalize as suas dúvidas.</li></ul>
+  <div class="cit">Reiki é simples. Reiki é natural. Reiki é amor em movimento.</div>
+  
+  <h2><span class="sq">■</span> 4. "Tenho medo de absorver energias densas"</h2>
+  <p><strong>O que está acontecendo:</strong> é um receio comum, e prevenível com uma rotina simples de proteção e higiene energética.</p>
+  <p><strong>O que fazer:</strong></p>
+  <ul><li>Antes: 'Eu sou apenas canal. Tudo o que não me pertence passa por mim e retorna à Fonte';</li><li>Use o Cho-Ku-Rei ao redor de si e do receptor (Nível II+);</li><li>Depois: lave as mãos, beba água, pise no chão, respire fundo;</li><li>Aplique Reiki em você para reequilibrar o seu campo.</li></ul>
+  <div class="cit">Cuidar da sua energia aumenta a sua confiança natural como terapeuta.</div>
+  
+  <h2><span class="sq">■</span> 5. "Acho que não tenho dom"</h2>
+  <p><strong>O que está acontecendo:</strong> crença limitante, comparação e falta de confiança. Reiki não é dom: é prática, intenção e canal.</p>
+  <p><strong>O que fazer:</strong></p>
+  <ul><li>Repita: 'Eu sou um canal puro e perfeito da energia universal';</li><li>Pare de se comparar — cada um tem o seu ritmo;</li><li>Volte à base: intenção + presença + prática = evolução.</li></ul>
+  <div class="cit">Se você recebeu a sintonização, você já é reikiano(a). O que falta é coragem para caminhar.</div>
+
+  <div class="ft"><span>—</span>3<span>—</span></div>
+</section><section class="page light">
+  <div class="hd"><span>Método Mãos Seguras</span><span>Guia de Objeções</span></div>
+  
+  
+  <h2><span class="sq">■</span> 6. "Não consigo criar uma rotina"</h2>
+  <p><strong>O que está acontecendo:</strong> a falta de rotina cria desconexão energética. O Reiki precisa ser alimentado, como qualquer prática.</p>
+  <p><strong>O que fazer:</strong></p>
+  <ul><li>Ritual diário de 5 a 10 minutos, sempre no mesmo horário;</li><li>Use um calendário ou app de hábitos;</li><li>Faça o desafio dos 21 Dias (Bônus 3) — e convide alguém para fazer junto.</li></ul>
+  <div class="cit">A confiança não vem do dom. Vem da repetição com intenção.</div>
+  
+  <h2><span class="sq">■</span> 7. "Como explico o Reiki sem parecer esotérico demais?"</h2>
+  <p><strong>O que está acontecendo:</strong> você ainda está encontrando a sua forma de comunicar. Isso se treina.</p>
+  <p><strong>O que fazer:</strong></p>
+  <ul><li>Use a frase neutra: 'técnica japonesa de canalização de energia para redução do estresse, equilíbrio emocional e bem-estar';</li><li>Evite jargão místico com pessoas mais racionais;</li><li>Compartilhe a sua experiência pessoal — é o que cria conexão;</li><li>Treine em voz alta: quem sou eu? O que eu faço? Como eu ajudo?</li></ul>
+  <div class="cit">Simples comunica. Complicado afasta.</div>
+  
+  <h2><span class="sq">■</span> 8. "Tenho medo (ou culpa) de cobrar"</h2>
+  <p><strong>O que está acontecendo:</strong> a crença de que 'energia não tem preço'. Mas o seu tempo, estudo e dedicação têm — e é isso que você cobra.</p>
+  <p><strong>O que fazer:</strong></p>
+  <ul><li>Apresente benefícios antes do preço, nunca o preço solto;</li><li>Comece com um valor que você consiga sustentar sem ressentimento;</li><li>Ofereça pacotes de acompanhamento;</li><li>Entenda: cobrar com ética sustenta a sua capacidade de continuar servindo.</li></ul>
+  <div class="cit">Praticar de graça no início não é se desvalorizar. É construir base. Mas não é para sempre.</div>
+
+  <div class="ft"><span>—</span>4<span>—</span></div>
+</section><section class="page light">
+  <div class="hd"><span>Método Mãos Seguras</span><span>Guia de Objeções</span></div>
+  
+  
+  <h2><span class="sq">■</span> 9. "Preciso de registro ou autorização para atuar?"</h2>
+  <p><strong>O que está acontecendo:</strong> o Reiki é reconhecido no Brasil como prática integrativa e complementar em saúde (PNPIC — Ministério da Saúde). Ele não é uma profissão regulamentada em conselho próprio, e é isso que confunde muita gente.</p>
+  <p><strong>O que fazer:</strong></p>
+  <ul><li>Apresente-se como <strong>terapeuta de Reiki</strong>, nunca como profissional de saúde;</li><li>Nunca prometa cura, diagnóstico ou substituição de tratamento;</li><li>Oriente sempre a pessoa a manter o acompanhamento médico e psicológico;</li><li>Formalize a sua atuação (contrato simples, recibo, registro de sessões);</li><li>Consulte a legislação municipal — algumas cidades têm exigências próprias.</li></ul>
+  <div class="cit">Clareza legal e consciência profissional protegem você e quem você atende.</div>
+
+  <h2><span class="sq">■</span> Quando a dúvida voltar</h2>
+  <p class="intro">Ela vai voltar — e tudo bem. Volte a este guia, respire e pergunte-se: <em>estou praticando com regularidade? Estou tentando controlar o resultado? Estou respeitando o meu tempo?</em></p>
+  <div class="cit">Não existe reikiano perfeito. Existe reikiano presente.</div>
+
+  <div class="box"><p><strong>Próximo passo:</strong> escolha <strong>uma</strong> objeção desta lista — a que mais te trava hoje — e aplique a resposta ainda esta semana. Uma de cada vez.</p></div>
+
+  <p class="fine">O Reiki é uma técnica japonesa criada por <strong>Mikao Usui em 1922</strong>, reconhecida no Brasil como prática integrativa e complementar em saúde (PNPIC — Ministério da Saúde). Este material tem caráter <strong>educacional</strong> e <strong>não substitui diagnóstico, tratamento ou acompanhamento médico ou psicológico</strong>. Não prometa cura nem resultados a quem você atende.</p>
+
+  <div class="ft"><span>—</span>5<span>—</span></div>
+</section></body></html>

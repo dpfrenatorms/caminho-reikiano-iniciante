@@ -1,0 +1,167 @@
+<!DOCTYPE html><html lang='pt-BR'><head><meta charset='utf-8'><title>bonus-2-roteiro-conversa-cliente</title><style>
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@1,400;1,700&family=Inter:wght@300;400;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:#e8e4ee}
+section.page{width:794px;height:1123px;position:relative;overflow:hidden;margin:0 auto 24px;background:#fff}
+
+/* ---------- capa ---------- */
+.cover{background:#1a1040;color:#fff;text-align:center}
+img.bg{position:absolute;top:0;left:0;width:794px;height:1123px;z-index:0}
+.cv-in{position:relative;z-index:2;margin-top:300px;padding:0 80px}
+.cv-eyebrow{font-family:'League Spartan',sans-serif;font-weight:800;font-size:14px;letter-spacing:.28em;color:#3FD8E8}
+.cv-line{width:110px;height:2px;background:#3FD8E8;margin:20px auto 30px}
+.cv-title{font-family:'League Spartan',sans-serif;font-weight:900;font-size:42px;line-height:1.1;
+ text-transform:uppercase;text-shadow:0 3px 14px rgba(22,8,45,.85)}
+.cv-sub{font-family:'Playfair Display',serif;font-style:italic;font-size:20px;color:#CDB8F0;margin-top:24px;line-height:1.5}
+.cv-meta{font-size:12.5px;color:#EDE6FA;margin-top:40px;letter-spacing:.06em;line-height:1.7}
+img.logo{position:absolute;bottom:44px;left:337px;width:120px;z-index:3}
+
+/* ---------- miolo ---------- */
+.light{padding:76px 78px 84px;color:#2B2B2B;display:flex;flex-direction:column;justify-content:center}
+.hd{position:absolute;top:34px;left:78px;right:78px;display:flex;justify-content:space-between;
+ font-size:9.5px;color:#a89bc0;letter-spacing:.08em;font-weight:300;text-transform:uppercase}
+.ft{position:absolute;bottom:32px;left:0;right:0;text-align:center;font-size:11px;color:#6A10AD;font-weight:600}
+.ft span{color:#d5c8e8;margin:0 10px}
+h2{font-family:'League Spartan',sans-serif;font-weight:800;color:#6A10AD;font-size:21px;margin:0 0 6px}
+h2.sa{font-size:28px;margin-bottom:14px}
+h3{font-family:'League Spartan',sans-serif;font-weight:700;color:#8E3FC7;font-size:15px;margin:22px 0 8px}
+p{font-size:13.5px;line-height:1.65;margin:0 0 11px}
+.sq{color:#6A10AD;font-size:14px;margin-right:6px}
+.intro{font-size:13.5px;line-height:1.7;color:#4a4a4a;margin-bottom:18px}
+ul,ol{margin:4px 0 14px 20px}
+li{font-size:13.5px;line-height:1.6;margin-bottom:6px}
+
+/* caixa de citação / frase de apoio */
+.cit{border-left:3px solid #6A10AD;padding:9px 16px;margin:12px 0 16px;font-family:'Playfair Display',serif;
+ font-style:italic;font-size:14.5px;color:#3d1466;line-height:1.55}
+/* caixa de template */
+.tpl{background:#FAF0DC;border-radius:10px;padding:15px 18px;margin:12px 0 16px;font-size:13px;line-height:1.6}
+.tpl-t{font-family:'League Spartan',sans-serif;font-weight:800;font-size:10px;letter-spacing:.14em;color:#8a6d1f;margin-bottom:7px}
+/* caixa lavanda */
+.box{background:#F5EEFF;border-left:4px solid #6A10AD;border-radius:8px;padding:14px 18px;margin:12px 0 16px}
+.box p{margin:0;font-size:13px}
+/* checkbox printável */
+.cb{display:inline-block;width:13px;height:13px;border:1.6px solid #6A10AD;border-radius:3px;
+ margin-right:9px;vertical-align:-2px}
+.ck{list-style:none;margin-left:0}
+.ck li{margin-bottom:9px}
+/* linha para preencher */
+.fill{border-bottom:1px dotted #b9a9d4;height:20px;margin:0 0 9px}
+/* tabela */
+table{width:100%;border-collapse:collapse;margin:10px 0 16px;font-size:12.5px}
+th{background:#6A10AD;color:#fff;font-weight:700;padding:8px 9px;text-align:left;font-family:'League Spartan',sans-serif}
+td{padding:7px 9px;border-bottom:.5px solid #ddd;vertical-align:top}
+tbody tr:nth-child(even){background:#F5EEFF}
+/* grade 21 dias */
+.grid21{display:grid;grid-template-columns:repeat(7,1fr);gap:7px;margin:10px 0 8px}
+.day{border:1.4px solid #cdbce6;border-radius:7px;height:58px;position:relative;background:#fff}
+.day b{position:absolute;top:5px;left:7px;font-family:'League Spartan',sans-serif;font-size:11px;color:#8E3FC7}
+.wk{font-family:'League Spartan',sans-serif;font-weight:800;font-size:11px;letter-spacing:.12em;color:#6A10AD;margin:14px 0 4px}
+.fine{font-size:10.5px;color:#6B6B6B;line-height:1.6}
+
+@media print{
+ html,body{margin:0;padding:0;background:#fff}
+ section.page{margin:0 auto !important;page-break-after:always;break-after:page}
+ section.page:last-child{page-break-after:auto}
+}
+@page{size:210mm 297mm;margin:0}
+*{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important}
+</style></head><body><section class="page cover">
+  <img class="bg" src="../../../../design/canva-import/bg-opener-v3.png" alt=""/>
+  <div class="cv-in">
+    <div class="cv-eyebrow">Bônus 2 · Curso O Caminho do Reikiano Iniciante</div>
+    <div class="cv-line"></div>
+    <div class="cv-title">Roteiro de Conversa<br/>com o Cliente</div>
+    <div class="cv-sub">O que falar antes, durante e depois da sessão.</div>
+    <div class="cv-meta">Frases prontas para adaptar com as suas palavras<br/>Mestre Renato Menezes · Om Reiki Om</div>
+  </div>
+  <img class="logo" src="../../../../design/canva-import/logo-omreikiom.png" alt="Om Reiki Om"/>
+</section><section class="page light">
+  <div class="hd"><span>Método Mãos Seguras</span><span>Roteiro de Conversa</span></div>
+  
+  <h2 class="sa">As palavras também cuidam</h2>
+  <p class="intro">Boa parte da insegurança do reikiano iniciante não está nas mãos — está na <strong>boca</strong>. Não saber o que dizer trava o convite, a sessão e o retorno. Aqui estão os roteiros. Use como base e adapte com o seu jeito.</p>
+
+  <h2><span class="sq">■</span> 1. O convite (sem parecer amador ou carente)</h2>
+  <div class="tpl">
+    <div class="tpl-t">MODELO — WHATSAPP OU DIRECT</div>
+    <div>"Oi, [nome]! Estou em processo de formação como terapeuta de Reiki e estou abrindo algumas sessões gratuitas para prática supervisionada. Você gostaria de participar? A sessão é relaxante, sem contato físico, e pode ajudar com ansiedade, insônia ou estresse. Se tiver interesse, me avisa que envio mais detalhes. Gratidão!"</div>
+  </div>
+  <ul>
+    <li>Seja direto(a), gentil e claro(a);</li>
+    <li>Deixe explícito que é uma prática limitada ("estou abrindo 5 vagas");</li>
+    <li>Senso de exclusividade evita desvalorização.</li>
+  </ul>
+
+  <h2><span class="sq">■</span> 2. Explicar o Reiki em uma frase</h2>
+  <div class="tpl">
+    <div class="tpl-t">VERSÃO NEUTRA — SERVE PARA QUALQUER PESSOA</div>
+    <div>"Reiki é uma técnica japonesa de canalização de energia, usada para redução do estresse, equilíbrio emocional e bem-estar. É uma prática integrativa e complementar — não substitui tratamento médico."</div>
+  </div>
+  <ul>
+    <li>Com pessoas mais racionais, <strong>evite jargão místico</strong>;</li>
+    <li>Compartilhe a sua experiência pessoal — é o que cria conexão;</li>
+    <li>Treine em voz alta: quem sou eu? O que eu faço? Como eu ajudo?</li>
+  </ul>
+
+  <div class="ft"><span>—</span>2<span>—</span></div>
+</section><section class="page light">
+  <div class="hd"><span>Método Mãos Seguras</span><span>Roteiro de Conversa</span></div>
+  
+  <h2><span class="sq">■</span> 3. Antes da sessão</h2>
+  <p><strong>Pergunte:</strong></p>
+  <ul>
+    <li>"Como você está se sentindo hoje, no corpo e nas emoções?"</li>
+    <li>"Tem alguma coisa específica que te trouxe aqui?"</li>
+    <li>"Você já recebeu Reiki antes?"</li>
+  </ul>
+  <p><strong>Explique e alivie a expectativa:</strong></p>
+  <div class="tpl">
+    <div class="tpl-t">O QUE DIZER</div>
+    <div>"Você não precisa fazer nada. É só deitar, fechar os olhos e receber. Algumas pessoas sentem calor, formigamento ou relaxamento profundo; outras não sentem nada de imediato — e está tudo bem. A energia age nos níveis sutis, no seu tempo."</div>
+  </div>
+
+  <h2><span class="sq">■</span> 4. Durante a sessão</h2>
+  <ul>
+    <li>Silêncio e acolhimento — fale o mínimo;</li>
+    <li>Se precisar avisar uma mudança de posição, use voz baixa e curta;</li>
+    <li>Sustente a sua presença pela respiração. Não force nada.</li>
+  </ul>
+
+  <h2><span class="sq">■</span> 5. Depois da sessão</h2>
+  <p><strong>Pergunte:</strong> "Como você se sentiu?" — e <em>escute sem corrigir</em>.</p>
+  <div class="tpl">
+    <div class="tpl-t">ORIENTAÇÃO DE ENCERRAMENTO</div>
+    <div>"Levante devagar e beba bastante água hoje. Observe como você se sente nas próximas 24 a 48 horas — às vezes os efeitos aparecem depois. Cada pessoa reage de um jeito; confie no seu processo. E continue com os seus tratamentos de saúde normalmente."</div>
+  </div>
+  <div class="cit">Não é o seu papel curar ninguém. O Reiki apoia o processo de equilíbrio — e cada um tem o seu tempo.</div>
+
+  <div class="ft"><span>—</span>3<span>—</span></div>
+</section><section class="page light">
+  <div class="hd"><span>Método Mãos Seguras</span><span>Roteiro de Conversa</span></div>
+  
+  <h2><span class="sq">■</span> 6. Pedir o retorno (e o depoimento)</h2>
+  <div class="tpl">
+    <div class="tpl-t">MENSAGEM 24–48H DEPOIS</div>
+    <div>"Oi, [nome]! Passando para saber como você se sentiu depois da sessão. Notou alguma mudança no sono, no ânimo ou no corpo? Seu retorno me ajuda muito a evoluir na prática. E, se você se sentir à vontade, posso compartilhar a sua experiência (sem citar seu nome, se preferir)?"</div>
+  </div>
+  <ul>
+    <li>Peça o retorno <strong>depois</strong> que a pessoa teve tempo de observar;</li>
+    <li>Sempre pergunte antes de publicar qualquer relato;</li>
+    <li>Guarde a autorização junto do seu registro de sessão.</li>
+  </ul>
+
+  <h2><span class="sq">■</span> 7. Comunicar o valor sem medo</h2>
+  <p class="intro">Quando chegar a hora de cobrar, não anuncie um preço solto — apresente o que a pessoa recebe. Cobrar com ética não diminui a espiritualidade da sua prática: é o que sustenta a sua capacidade de continuar servindo.</p>
+  <div class="tpl">
+    <div class="tpl-t">MODELO — APRESENTANDO O VALOR</div>
+    <div>"Minhas sessões de Reiki ajudam a aliviar o estresse, melhorar o sono e trazer equilíbrio emocional. Para um atendimento individual, o valor é R$ ____ e, se você quiser um acompanhamento completo, tenho pacotes com condição especial."</div>
+  </div>
+
+  <h3>Suas frases — adapte com as suas palavras</h3>
+  <div class="fill"></div><div class="fill"></div><div class="fill"></div><div class="fill"></div><div class="fill"></div><div class="fill"></div>
+
+  <p class="fine">O Reiki é uma técnica japonesa criada por <strong>Mikao Usui em 1922</strong>, reconhecida no Brasil como prática integrativa e complementar em saúde (PNPIC — Ministério da Saúde). Este material tem caráter <strong>educacional</strong> e <strong>não substitui diagnóstico, tratamento ou acompanhamento médico ou psicológico</strong>. Não prometa cura nem resultados a quem você atende.</p>
+
+  <div class="ft"><span>—</span>4<span>—</span></div>
+</section></body></html>
