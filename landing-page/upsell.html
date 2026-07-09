@@ -59,12 +59,11 @@ h2.title.light-txt{color:#fff}
 .hero h1{font-weight:900;font-size:38px;line-height:1.1;margin:12px auto 16px;max-width:760px}
 .hero h1 .hl{color:var(--ciano-2)}
 .hero .sub{font-size:17px;color:#F1EAFE;max-width:620px;margin:0 auto 30px}
-.video{max-width:640px;margin:0 auto 30px;aspect-ratio:16/9;background:rgba(0,0,0,.35);
-  border:1px solid rgba(63,216,232,.4);border-radius:14px;display:flex;flex-direction:column;
-  align-items:center;justify-content:center;color:var(--lavanda);gap:10px}
-.video .play{width:64px;height:64px;border-radius:50%;background:rgba(63,216,232,.15);border:2px solid var(--ciano);
-  display:flex;align-items:center;justify-content:center;font-size:24px;color:var(--ciano)}
-.video small{font-size:12px;letter-spacing:.06em}
+.video{max-width:680px;margin:0 auto 14px;border:1px solid rgba(63,216,232,.4);border-radius:14px;
+  overflow:hidden;background:#000;box-shadow:0 18px 50px rgba(0,0,0,.45);line-height:0}
+.video video{width:100%;height:auto;display:block;aspect-ratio:16/9;background:#000}
+.video-cap{font-size:14.5px;color:var(--lavanda);max-width:600px;margin:0 auto 28px}
+.cta-micro{font-size:13.5px;color:var(--lavanda);max-width:520px;margin:0 auto 16px;font-style:italic}
 
 /* Ponte */
 .ponte{background:#fff;text-align:center}
@@ -185,10 +184,14 @@ footer .fine{font-size:11.5px;color:#8a7fae}
     <div class="eyebrow">Oferta especial para quem quer praticar</div>
     <h1>Seu e-book está garantido. Agora veja como transformar esse roteiro em <span class="hl">prática real</span>.</h1>
     <p class="sub">Entre no curso online <strong>O Caminho do Reikiano Iniciante</strong> e aprenda, em aulas simples, como conduzir seus primeiros atendimentos com mais segurança, ética e clareza.</p>
-    <div class="video" aria-label="Vídeo do Renato">
-      <div class="play">▶</div>
-      <small>VÍDEO DO MESTRE RENATO · 3–4 MIN (a inserir)</small>
+    <div class="video">
+      <video controls preload="metadata" playsinline poster="assets/upsell-poster.jpg">
+        <source src="assets/upsell-renato.mp4" type="video/mp4">
+        Seu navegador não reproduz vídeo. <a href="assets/upsell-renato.mp4">Baixe o vídeo aqui</a>.
+      </video>
     </div>
+    <p class="video-cap">Aperte o play — 2 minutos que podem economizar semanas de insegurança.</p>
+    <p class="cta-micro">Seu e-book já está garantido. Este é só o próximo passo, se você quiser praticar com mais segurança.</p>
     <a href="#oferta" class="btn btn-buy" data-upsell="accept">Sim, quero praticar guiado <span class="price">Adicionar o curso — R$ 197</span></a>
     <div><a href="#nao" class="btn-decline" data-upsell="decline">Não, quero seguir apenas com o e-book</a></div>
   </div>

@@ -18,10 +18,16 @@ Antes de você abrir, quero te mostrar uma opção especial, pensada para quem q
 
 ---
 
-## 1. Vídeo curto do Renato (3–6 min)
+## 1. Vídeo curto do Renato ✅ **gravado e embutido**
 
-`[EMBED: vídeo de upsell — script pronto em curso/narracao/UPSELL-video-renato.txt]`
-Legenda abaixo do player: **Aperte o play — 4 minutos que podem economizar semanas de insegurança.**
+Gravado com avatar HeyGen, usando o **fundo original do avatar** (sem falhas de composição). **Duração: 2:01.**
+
+- **Arquivo web:** `landing-page/assets/upsell-renato.mp4` — 1280×720, H.264, ~9,6 MB, `+faststart` (comprimido do master de 73 MB)
+- **Poster:** `landing-page/assets/upsell-poster.jpg` (frame de 1,4 s)
+- **Roteiro realmente gravado:** `curso/narracao/UPSELL-video-renato.txt` (fala pura, pausas por pontuação)
+- **Player:** `<video controls poster preload="metadata" playsinline>` em `landing-page/upsell.html`
+
+Legenda abaixo do player: **Aperte o play — 2 minutos que podem economizar semanas de insegurança.**
 
 ---
 
@@ -86,10 +92,23 @@ No curso, o Mestre Renato te guia, aula por aula, pelo **Método Mãos Seguras**
 
 ## 7. O que você recebe
 
-**No curso:**
+**Os módulos** *(promessa de valor exibida na página; a grade técnica real está em `curso/grade-curricular.md`, M0–M5 · 20 aulas)*:
+
+1. Boas-vindas e postura do reikiano iniciante
+2. Como se preparar antes da aplicação
+3. Como conduzir uma sessão sem travar
+4. O que fazer quando a pessoa diz que "não sentiu nada"
+5. Como explicar Reiki de forma simples e ética
+6. Como começar com familiares, amigos e primeiros atendimentos
+7. Cobrança, limites e postura profissional
+8. Plano de prática para os próximos 21 dias
+
+**Tudo o que você leva:**
 - Curso online completo, com aulas gravadas (acesso pelo celular ou computador)
 - **Método Mãos Seguras** explicado passo a passo
+- Plano de prática de 21 dias · Checklist de sessão segura · Roteiro de atendimento · Guia de dúvidas comuns
 - Aulas curtas e diretas, uma prática aplicável por dia
+- Estude no seu ritmo, quando e quantas vezes quiser
 
 **Bônus (ferramentas de aplicação):**
 1. **Checklist Sessão Segura** — para revisar tudo antes de aplicar
@@ -138,11 +157,16 @@ Reiki é uma prática integrativa e complementar (PNPIC), que não substitui tra
 
 ## Notas de implementação (bloqueadores do gate de aprovação)
 
-- [ ] Página de upsell **separada** publicada (não misturar com a LP do e-book)
-- [ ] **Retirar o curso da "lista de espera" da LP inicial** (§11 do `landing-page/index.html`) — o curso agora é vendido como upsell pós-compra, não como espera
-- [ ] Vídeo curto do Renato gravado e embutido
-- [ ] Tabela e-book × curso presente
-- [ ] E-book entregue **mesmo se o aluno recusar** o upsell
-- [ ] CTA de aceite e de recusa configurados na Eduzz
+> **Este documento é o CANÔNICO da copy do upsell.** Em 09/07/2026 consolidou os duplicados criados em paralelo na outra máquina: `landing-page/upsell-copy.md` e `landing-page/upsell-video-roteiro.txt` (ambos removidos).
+> **Implementação da página:** `landing-page/upsell.html` (design v3, autossuficiente com `assets/`).
+> **Mecanismo:** `curso/upsell/metodo-maos-seguras.md`.
+
+- [x] Página de upsell **separada** construída (`landing-page/upsell.html`) — **falta publicar**
+- [x] **Vídeo curto do Renato gravado e embutido** (2:01, player com poster)
+- [x] Tabela e-book × curso presente
+- [x] Claims revisados (sem cura/renda/resultado garantido; disclaimer PNPIC no rodapé; Mikao Usui 1922)
+- [ ] Publicar a página (ex.: `reikibrasilia.br.com/ebook/upsell`) **ou** colar a copy na config de upsell do Eduzz
+- [ ] **CTA de aceite e de recusa configurados na Eduzz** → colar as URLs nas constantes `UPSELL_ACCEPT_URL` / `UPSELL_DECLINE_URL` do `upsell.html`
+- [ ] **E-book entregue mesmo se o aluno recusar** o upsell (config Eduzz)
 - [ ] Rastreamento: compra do e-book, upsell aceito, upsell recusado
-- [ ] Claims revisados (sem cura/renda/resultado garantido) — usar o checklist da F5
+- [~] **Lista de espera da LP inicial** (§11 do `landing-page/index.html`): decisão de 09/07/2026 — **manter como está por ora**, porque o curso ainda não está gravado. Revisar quando o curso for ao ar.
