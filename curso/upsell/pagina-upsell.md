@@ -20,9 +20,10 @@ Antes de você abrir, quero te mostrar uma opção especial, pensada para quem q
 
 ## 1. Vídeo curto do Renato ✅ **gravado e embutido**
 
-Gravado com avatar HeyGen, usando o **fundo original do avatar** (sem falhas de composição). **Duração: 2:01.**
+Gravado com avatar HeyGen usando o **fundo liso original do avatar** (parede neutra) — a primeira versão, com uma cena de sala, tinha o matte da poltrona piscando contra o fundo detalhado. Fundo liso resolveu. **Duração: 2:01.**
 
-- **Arquivo web:** `landing-page/assets/upsell-renato.mp4` — 1280×720, H.264, ~9,6 MB, `+faststart` (comprimido do master de 73 MB)
+- **Master (não versionado):** `artefatos/Vídeo_Upsell_Curso_Online (1).mp4` — 1920×1080, 97,6 MB. Fica no disco/HD; está no `.gitignore` porque o deploy faz `git clone` no servidor.
+- **Arquivo web:** `landing-page/assets/upsell-renato.mp4` — 1280×720, H.264 CRF 24, **12,6 MB**, `+faststart`
 - **Poster:** `landing-page/assets/upsell-poster.jpg` (frame de 1,4 s)
 - **Roteiro realmente gravado:** `curso/narracao/UPSELL-video-renato.txt` (fala pura, pausas por pontuação)
 - **Player:** `<video controls poster preload="metadata" playsinline>` em `landing-page/upsell.html`

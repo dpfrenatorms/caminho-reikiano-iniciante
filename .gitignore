@@ -2,3 +2,11 @@
 *.tmp
 .DS_Store
 Thumbs.db
+
+# Masters de vídeo (grandes) — NÃO versionar.
+# Motivo: o deploy da LP faz `git clone` do repo dentro do servidor
+# (ver docs/playbook-proximas-fases.md §10). Um blob de ~100 MB deixaria
+# cada deploy pesado, e o GitHub bloqueia arquivos acima de 100 MB.
+# Os masters ficam no disco e viajam no HD (o export espelha C:\Workspace).
+# A versão web comprimida vai versionada em landing-page/assets/.
+artefatos/Vídeo_Upsell_Curso_Online*.mp4
